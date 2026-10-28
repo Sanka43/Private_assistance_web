@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/data/
+
+Sitemap: http://localhost/Private_assistance_web/sitemap.xml

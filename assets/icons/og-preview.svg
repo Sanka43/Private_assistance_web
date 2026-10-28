@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bgGlow" cx="70%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#285c4e" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0f2620" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3b33" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#142c26" stop-opacity="0.95" />
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd580" />
+      <stop offset="100%" stop-color="#f5af19" />
+    </linearGradient>
+    <filter id="drop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="630" fill="#0d1f1a"/>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+
+  <!-- Subtle Grid Accent -->
+  <g opacity="0.08" stroke="#fcfaf5" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="500" y1="0" x2="500" y2="630"/>
+    <line x1="700" y1="0" x2="700" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1100" y1="0" x2="1100" y2="630"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="440" x2="1200" y2="440"/>
+  </g>
+
+  <!-- Left Content Branding -->
+  <g transform="translate(100, 100)">
+    <!-- Brand Badge -->
+    <rect x="0" y="0" width="220" height="38" rx="19" fill="#173d34" stroke="#799a87" stroke-width="1" stroke-opacity="0.4"/>
+    <circle cx="20" cy="19" r="6" fill="#10b981"/>
+    <text x="36" y="24" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#a7f3d0" letter-spacing="1.5">PRIVATE AI AGENTS</text>
+
+    <!-- Main Title -->
+    <text x="0" y="110" font-family="'DM Sans', system-ui, sans-serif" font-weight="800" font-size="56" fill="#fcfaf5" letter-spacing="-1">
+      RuXt AI
+    </text>
+    <text x="0" y="170" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="36" fill="url(#goldText)" letter-spacing="-0.5">
+      Your Private Autonomous Executive Board
+    </text>
+
+    <!-- Value Proposition -->
+    <text x="0" y="235" font-family="'DM Sans', system-ui, sans-serif" font-weight="400" font-size="20" fill="#c3cfca">
+      Deploy an autonomous team of AI specialists—Chief of Staff, CMO, CTO, CFO.
+    </text>
+    <text x="0" y="270" font-family="'DM Sans', system-ui, sans-serif" font-weight="400" font-size="20" fill="#c3cfca">
+      100% Private local database • Zero SaaS subscriptions • Sinhala &amp; English Voice.
+    </text>
+
+    <!-- Badges Row -->
+    <g transform="translate(0, 340)">
+      <rect x="0" y="0" width="160" height="42" rx="10" fill="#173d34" stroke="#285c4e" stroke-width="1.5"/>
+      <text x="80" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">🔒 100% Private</text>
+
+      <rect x="180" y="0" width="180" height="42" rx="10" fill="#173d34" stroke="#285c4e" stroke-width="1.5"/>
+      <text x="270" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">⚡ Zero Monthly Fees</text>
+
+      <rect x="380" y="0" width="180" height="42" rx="10" fill="#173d34" stroke="#285c4e" stroke-width="1.5"/>
+      <text x="470" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">🎙️ Bilingual Voice</text>
+    </g>
+  </g>
+
+  <!-- Right Visual Card (Simulated UI Preview) -->
+  <g transform="translate(730, 90)" filter="url(#drop)">
+    <!-- Window Container -->
+    <rect width="390" height="450" rx="20" fill="url(#cardGrad)" stroke="#3d6356" stroke-width="1.5"/>
+    
+    <!-- Window Bar -->
+    <rect width="390" height="42" rx="20" fill="#142c26"/>
+    <circle cx="26" cy="21" r="5" fill="#ef4444"/>
+    <circle cx="44" cy="21" r="5" fill="#eab308"/>
+    <circle cx="62" cy="21" r="5" fill="#22c55e"/>
+    <text x="195" y="26" font-family="'JetBrains Mono', monospace" font-size="11" fill="#799a87" text-anchor="middle">RuXt Executive Boardroom</text>
+
+    <!-- Chat/Boardroom Item 1 -->
+    <g transform="translate(20, 60)">
+      <rect width="350" height="74" rx="12" fill="#0f241e" stroke="#285c4e" stroke-width="1"/>
+      <circle cx="36" cy="37" r="18" fill="#173d34"/>
+      <text x="36" y="42" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffd580" text-anchor="middle">RuXt</text>
+      <text x="66" y="30" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="13" fill="#fcfaf5">Chief of Staff</text>
+      <text x="66" y="52" font-family="'DM Sans', system-ui, sans-serif" font-size="11" fill="#a3b8b0">"Board convened. Reviewing Q3 expansion strategy."</text>
+    </g>
+
+    <!-- Chat/Boardroom Item 2 -->
+    <g transform="translate(20, 146)">
+      <rect width="350" height="74" rx="12" fill="#0f241e" stroke="#285c4e" stroke-width="1"/>
+      <circle cx="36" cy="37" r="18" fill="#1d4ed8"/>
+      <text x="36" y="42" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffffff" text-anchor="middle">CTO</text>
+      <text x="66" y="30" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="13" fill="#93c5fd">Elena Rostova · CTO</text>
+      <text x="66" y="52" font-family="'DM Sans', system-ui, sans-serif" font-size="11" fill="#a3b8b0">"Local SQLite architecture deployed. 0ms latency."</text>
+    </g>
+
+    <!-- Chat/Boardroom Item 3 -->
+    <g transform="translate(20, 232)">
+      <rect width="350" height="74" rx="12" fill="#0f241e" stroke="#285c4e" stroke-width="1"/>
+      <circle cx="36" cy="37" r="18" fill="#b45309"/>
+      <text x="36" y="42" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffffff" text-anchor="middle">CMO</text>
+      <text x="66" y="30" font-family="'DM Sans', system-ui, sans-serif" font-weight="700" font-size="13" fill="#fcd34d">Marcus Vance · CMO</text>
+      <text x="66" y="52" font-family="'DM Sans', system-ui, sans-serif" font-size="11" fill="#a3b8b0">"Campaign drafted. Converting leads at 4.2x ROI."</text>
+    </g>
+
+    <!-- Bottom Stat Pill -->
+    <g transform="translate(20, 320)">
+      <rect width="350" height="100" rx="14" fill="#173d34" stroke="#799a87" stroke-width="1"/>
+      <text x="175" y="40" font-family="'DM Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#a7f3d0" text-anchor="middle">\$18,400+ / yr</text>
+      <text x="175" y="68" font-family="'DM Sans', system-ui, sans-serif" font-size="12" fill="#c3cfca" text-anchor="middle">Average Annual SaaS &amp; Agency Savings</text>
+    </g>
+  </g>
+</svg>

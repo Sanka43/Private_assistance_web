@@ -1,0 +1,168 @@
+/* RuXt AI Sales Engine Custom Styling */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+    --ruxt-pine: #173d34;
+    --ruxt-pine-hover: #285c4e;
+    --ruxt-pine-deep: #0f2620;
+    --ruxt-cream: #fcfaf5;
+    --ruxt-panel: #f5f2e9;
+    --ruxt-line: #ddd8cc;
+    --ruxt-line-soft: #e8e3d9;
+    --ruxt-text: #202725;
+    --ruxt-muted: #68716d;
+    --ruxt-gold: #b7843f;
+    --ruxt-sage: #799a87;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--ruxt-cream);
+    color: var(--ruxt-text);
+    overflow-x: hidden;
+}
+
+/* Typography Helpers */
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle Hero Glow */
+.hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(40, 92, 78, 0.15) 0%, rgba(23, 61, 52, 0) 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(221, 216, 204, 0.8);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+    border-color: rgba(23, 61, 52, 0.4);
+    box-shadow: 0 16px 32px -12px rgba(23, 61, 52, 0.08);
+}
+
+.dark-glass-card {
+    background: rgba(15, 38, 32, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(121, 154, 135, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(7, 21, 17, 0.4);
+}
+
+/* Smooth Accordion */
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out, opacity 0.25s ease-out;
+    opacity: 0;
+}
+
+.faq-content.open {
+    max-height: 400px;
+    opacity: 1;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f5f2e9;
+}
+::-webkit-scrollbar-thumb {
+    background: #c3cfca;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #799a87;
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd8cc;
+    border-radius: 9999px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--ruxt-pine);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(23, 61, 52, 0.3);
+    border: 2px solid #ffffff;
+    transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+/* Pulsing Live Dot */
+@keyframes pulseDot {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.35);
+        opacity: 0.6;
+    }
+}
+
+.live-pulse {
+    animation: pulseDot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer Highlight Button */
+.btn-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 80%
+    );
+    transform: rotate(30deg);
+    animation: shimmerSlide 5s infinite;
+}
+
+@keyframes shimmerSlide {
+    0% { transform: translateX(-150%) rotate(30deg); }
+    30% { transform: translateX(150%) rotate(30deg); }
+    100% { transform: translateX(150%) rotate(30deg); }
+}

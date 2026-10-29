@@ -1,6 +1,23 @@
 /**
- * RuXt AI - Sales Engine & Interactive Experience
+ * RuXt AI - Sales Engine, Sign-In Gateway & Interactive Experience
  */
+
+/**
+ * External Tool Sign In & Introduction Video Configuration
+ * - targetUrl: Destination URL of your SaaS/tool sign-in page (hosted on an external domain).
+ *   Configured with '#' for development as requested.
+ *   In production, replace with your live tool domain e.g., 'https://app.yourdomain.com/login'
+ * - delaySeconds: Duration in seconds to show introduction video before skip button is shown/unlocked.
+ * - videoSrc: Path to video file (or external stream).
+ * - autoRouteAfterDelay: Set to false so the user can see the unlocked button and click to proceed.
+ */
+const SIGN_IN_CONFIG = {
+    targetUrl: 'https://app.ruxt.org/',
+    delaySeconds: 10,
+    videoSrc: 'assets/video/intro.mp4',
+    autoPlay: true,
+    autoRouteAfterDelay: true
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Initialize Lucide Icons if available
@@ -25,7 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+                // If the link is not the sign-in trigger, hide the menu
+                if (!link.classList.contains('sign-in-btn')) {
+                    mobileMenu.classList.add('hidden');
+                }
             });
         });
     }
@@ -61,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. FAQ Accordion Logic
+    // 4. FAQ Accordion Logic
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const questionBtn = item.querySelector('.faq-question');
@@ -207,5 +227,213 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    }
+
+    // 6. Sign In Introduction Video Gateway Modal Logic (Light White Background Theme)
+    const signInVideoModal = document.getElementById('signInVideoModal');
+    const closeSignInModalBtn = document.getElementById('closeSignInModalBtn');
+    const skipToSignInBtn = document.getElementById('skipToSignInBtn');
+    const skipBtnLabel = document.getElementById('skipBtnLabel');
+    const skipBtnCountdownText = document.getElementById('skipBtnCountdownText');
+    const countdownProgressBar = document.getElementById('countdownProgressBar');
+    const introVideoPlayer = document.getElementById('introVideoPlayer');
+    const introVideoFallback = document.getElementById('introVideoFallback');
+
+    // All buttons triggering Sign In flow
+    const signInTriggers = document.querySelectorAll('.sign-in-btn, [data-action="signin"]');
+
+    let countdownInterval = null;
+    const totalDelayMs = (SIGN_IN_CONFIG.delaySeconds || 10) * 1000;
+    let remainingMs = totalDelayMs;
+    let isDelayCompleted = false;
+
+    function updateTimerDisplay() {
+        const secondsLeft = Math.ceil(remainingMs / 1000);
+        const displaySec = secondsLeft > 0 ? secondsLeft : 0;
+
+        if (countdownProgressBar) {
+            const percentage = (remainingMs / totalDelayMs) * 100;
+            countdownProgressBar.style.width = `${Math.max(0, Math.min(100, percentage))}%`;
+        }
+        if (skipBtnCountdownText && !isDelayCompleted) {
+            skipBtnCountdownText.textContent = displaySec > 0 ? ` (${displaySec}s)` : '';
+        }
+    }
+
+    function onDelayCompleted() {
+        isDelayCompleted = true;
+        clearInterval(countdownInterval);
+        remainingMs = 0;
+        updateTimerDisplay();
+
+        // Unlock & Show Skip / Sign In Button strictly when delay ends
+        if (skipToSignInBtn) {
+            skipToSignInBtn.classList.remove('skip-btn-counting', 'skip-btn-locked');
+            skipToSignInBtn.classList.add('skip-btn-active');
+            skipToSignInBtn.removeAttribute('aria-disabled');
+            if (skipBtnLabel) {
+                skipBtnLabel.textContent = 'Proceed to Sign In';
+            }
+            if (skipBtnCountdownText) {
+                skipBtnCountdownText.textContent = '';
+            }
+        }
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+
+        // Optional auto-route after brief delay if enabled
+        if (SIGN_IN_CONFIG.autoRouteAfterDelay) {
+            setTimeout(() => {
+                routeToSignIn('auto-timer-delayed');
+            }, 1500);
+        }
+    }
+
+    function startCountdown() {
+        clearInterval(countdownInterval);
+        isDelayCompleted = false;
+        remainingMs = totalDelayMs;
+
+        // Reset skip button to strictly locked state
+        if (skipToSignInBtn) {
+            skipToSignInBtn.classList.remove('skip-btn-active');
+            skipToSignInBtn.classList.add('skip-btn-locked');
+            skipToSignInBtn.setAttribute('aria-disabled', 'true');
+            if (skipBtnLabel) skipBtnLabel.textContent = 'Skip & Sign In';
+            if (skipBtnCountdownText) skipBtnCountdownText.textContent = ` (${Math.ceil(totalDelayMs / 1000)}s)`;
+        }
+
+        updateTimerDisplay();
+
+        countdownInterval = setInterval(() => {
+            if (!isDelayCompleted) {
+                remainingMs -= 100;
+                if (remainingMs <= 0) {
+                    onDelayCompleted();
+                } else {
+                    updateTimerDisplay();
+                }
+            }
+        }, 100);
+    }
+
+    function openSignInModal() {
+        if (!signInVideoModal) return;
+
+        // Hide mobile menu if open
+        if (mobileMenu) mobileMenu.classList.add('hidden');
+
+        signInVideoModal.classList.remove('hidden');
+
+        // Attempt HTML5 video playback
+        if (introVideoPlayer) {
+            introVideoPlayer.currentTime = 0;
+            const playPromise = introVideoPlayer.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    if (introVideoFallback) introVideoFallback.classList.add('hidden');
+                }).catch(() => {
+                    // Autoplay was blocked or file missing; keep animated telemetry fallback visible
+                    if (introVideoFallback) introVideoFallback.classList.remove('hidden');
+                });
+            }
+        }
+
+        // Start countdown delay
+        startCountdown();
+
+        if (window.lucide) {
+            window.lucide.createIcons();
+        }
+    }
+
+    function closeSignInModal() {
+        if (!signInVideoModal) return;
+        clearInterval(countdownInterval);
+        if (introVideoPlayer) {
+            introVideoPlayer.pause();
+        }
+        signInVideoModal.classList.add('hidden');
+    }
+
+    function routeToSignIn(triggerSource = 'user') {
+        clearInterval(countdownInterval);
+        if (introVideoPlayer) {
+            introVideoPlayer.pause();
+        }
+
+        const target = SIGN_IN_CONFIG.targetUrl;
+
+        // If target URL is '#' (development mode as requested)
+        if (!target || target === '#' || target.trim() === '') {
+            if (window.location.hash !== '#signin') {
+                try {
+                    history.pushState(null, '', '#signin');
+                } catch (e) {
+                    window.location.hash = 'signin';
+                }
+            }
+            closeSignInModal();
+            return;
+        }
+
+        // In production: route to the external tool's sign-in page
+        window.location.href = target;
+    }
+
+    // Attach click listeners to all Sign In buttons
+    signInTriggers.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openSignInModal();
+        });
+    });
+
+    // Close button in modal
+    if (closeSignInModalBtn) {
+        closeSignInModalBtn.addEventListener('click', () => {
+            closeSignInModal();
+        });
+    }
+
+    // Backdrop click closes modal
+    if (signInVideoModal) {
+        signInVideoModal.addEventListener('click', (e) => {
+            if (e.target === signInVideoModal) {
+                closeSignInModal();
+            }
+        });
+    }
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && signInVideoModal && !signInVideoModal.classList.contains('hidden')) {
+            closeSignInModal();
+        }
+    });
+
+    // Skip & Sign In Button - strictly disabled until delay completes
+    if (skipToSignInBtn) {
+        skipToSignInBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (!isDelayCompleted) {
+                return false;
+            }
+            routeToSignIn('skip-button');
+        });
+    }
+
+    // Video ended event listener -> completes delay and reveals button
+    if (introVideoPlayer) {
+        introVideoPlayer.addEventListener('ended', () => {
+            onDelayCompleted();
+        });
+    }
+
+    // Check if initial URL has #signin hash to auto-open modal
+    if (window.location.hash === '#signin') {
+        openSignInModal();
     }
 });

@@ -31,6 +31,8 @@
 Private_assistance_web/
 ├── index.html                 # Main static landing page (GitHub Pages ready)
 ├── index.php                  # Local XAMPP/Apache production entry point
+├── signin.html                # Standalone workspace orientation & sign-in gateway
+├── signin.php                 # PHP workspace orientation & sign-in gateway
 ├── .htaccess                  # Apache server security headers & routing
 ├── robots.txt                 # SEO crawler rules
 ├── sitemap.xml                # SEO sitemap index
@@ -43,10 +45,21 @@ Private_assistance_web/
 │   │   └── custom.css         # Glassmorphism, animations, and custom styling
 │   ├── js/
 │   │   └── main.js            # Interactive calculators, simulator, modals, and direct inquiries
-│   └── icons/                 # Brand SVG logos and PWA icons
+│   ├── icons/                 # Brand SVG logos and PWA icons
+│   └── video/                 # Introduction & onboarding video assets (intro.mp4)
 └── api/
     ├── inquiry.php            # Secure lead capture endpoint (PHP + SQLite)
     └── data/                  # SQLite storage directory (.gitkeep)
+```
+
+### 🔐 Sign In & Introduction Video Configuration
+The "Sign In" button triggers an introductory video experience before auto-routing to your tool domain. Configure it in `assets/js/main.js`:
+```javascript
+const SIGN_IN_CONFIG = {
+    targetUrl: 'https://app.ruxt.org/',   // Tool domain destination
+    delaySeconds: 10,                     // Orientation video delay before auto-routing
+    videoSrc: 'assets/video/intro.mp4'
+};
 ```
 
 ---

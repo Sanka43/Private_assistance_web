@@ -1,0 +1,300 @@
+<?php
+// RuXt AI - Workspace Sign In & Orientation Gateway
+header('X-Frame-Options: SAMEORIGIN');
+header('X-Content-Type-Options: nosniff');
+?>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>RuXt AI · Workspace Sign In &amp; Orientation</title>
+    <meta name="title" content="RuXt AI · Workspace Sign In &amp; Orientation">
+    <meta name="description" content="Orientation and sign in gateway for RuXt AI Autonomous Executive Board &amp; Private Chief of Staff.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Favicon & PWA Icons -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/ruxt-logo.svg">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <meta name="theme-color" content="#173d34">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace']
+                    },
+                    colors: {
+                        ruxtPine: '#173d34',
+                        ruxtPineHover: '#285c4e',
+                        ruxtPineDeep: '#0f2620',
+                        ruxtCream: '#fcfaf5',
+                        ruxtPanel: '#f5f2e9',
+                        ruxtGold: '#b7843f',
+                        ruxtSage: '#799a87'
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-[#fcfaf5] text-[#202725] min-h-screen flex flex-col justify-between selection:bg-[#b7843f] selection:text-[#fcfaf5] relative overflow-x-hidden font-sans">
+
+    <!-- Subtle Ambient Glow -->
+    <div class="hero-glow top-0 left-1/2 -translate-x-1/2 opacity-30"></div>
+
+    <!-- Navigation Header -->
+    <header class="relative z-10 w-full border-b border-[#ddd8cc] bg-[#fcfaf5]/90 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="index.php" class="flex items-center space-x-3 group" title="Return to RuXt AI Home">
+                <div class="w-10 h-10 rounded-xl bg-[#173d34] text-[#fcfaf5] flex items-center justify-center -rotate-3 shadow-md shadow-[#173d34]/20 group-hover:rotate-0 transition-transform">
+                    <svg class="w-6 h-6" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 9h13.5a8.5 8.5 0 0 1 0 17H9z"/>
+                        <path d="M9 26l10 7"/>
+                        <path d="M17 17h14"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xl font-extrabold tracking-tight text-[#173d34]">RuXt</span>
+                        <span class="text-[9px] bg-[#173d34]/10 text-[#173d34] border border-[#173d34]/20 px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">AI ASSISTANT</span>
+                    </div>
+                    <p class="text-[11px] text-[#68716d] font-medium hidden sm:block">Private Autonomous Executive Board</p>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-3">
+                <a href="index.php" class="text-xs font-bold text-[#173d34] hover:text-[#285c4e] px-3.5 py-2 rounded-xl border border-[#ddd8cc] hover:bg-[#f5f2e9] transition-all flex items-center gap-1.5 shadow-sm">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Stage -->
+    <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 w-full flex-1 flex flex-col justify-center">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-[#173d34]/10 text-[#173d34] border border-[#173d34]/20 mb-4 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 live-pulse"></span>
+                <span>Workspace Onboarding Gateway</span>
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-[#173d34] tracking-tight">
+                RuXt AI Workspace Sign In
+            </h1>
+            <p class="text-sm sm:text-base text-[#68716d] max-w-xl mx-auto mt-2 leading-relaxed">
+                Watch the quick orientation tour before entering your private executive suite. The sign-in action unlocks once orientation finishes.
+            </p>
+        </div>
+
+        <!-- Video Gateway Card (White Homepage Style) -->
+        <div class="bg-[#ffffff] text-[#202725] rounded-3xl border border-[#ddd8cc] p-5 sm:p-7 shadow-2xl relative overflow-hidden flex flex-col gap-4">
+            
+            <!-- Video Player Frame -->
+            <div class="relative rounded-2xl overflow-hidden bg-[#0c201b] border border-[#ddd8cc] shadow-md aspect-video flex items-center justify-center">
+                <!-- HTML5 Video Player -->
+                <video id="introVideoPlayer" class="w-full h-full object-cover" playsinline controls preload="metadata" poster="assets/icons/og-preview.svg">
+                    <source src="assets/video/intro.mp4" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+
+                <!-- High-Tech Animated Demo Showcase if video file is not loaded/available -->
+                <div id="introVideoFallback" class="absolute inset-0 bg-gradient-to-br from-[#0c201b] via-[#102d26] to-[#0a1815] flex flex-col justify-between p-5 sm:p-7 select-none">
+                    <div class="flex items-center justify-between text-[11px] font-mono text-emerald-400/90 border-b border-emerald-900/40 pb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 live-pulse"></span>
+                            <span>RUXT_CORE_OS · v2.4 INITIALIZATION</span>
+                        </div>
+                        <div class="text-[#ffd580] hidden sm:block">100% PRIVATE &amp; LOCAL</div>
+                    </div>
+
+                    <div class="my-auto text-center space-y-3">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-[#173d34] border border-emerald-500/40 flex items-center justify-center text-[#ffd580] shadow-xl shadow-emerald-950/60 relative">
+                            <i data-lucide="play" class="w-8 h-8 sm:w-10 sm:h-10 ml-1 text-[#ffd580] animate-pulse"></i>
+                            <span class="absolute -inset-1 rounded-2xl border border-emerald-400/20 animate-ping"></span>
+                        </div>
+                        <div>
+                            <h2 class="text-base sm:text-xl font-extrabold text-[#fcfaf5] tracking-tight">RuXt Autonomous AI Executive Board</h2>
+                            <p class="text-xs sm:text-sm text-[#a2b2ac] max-w-md mx-auto mt-1">Chief of Staff · CMO · CTO · CFO working together in your private local SQLite vault.</p>
+                        </div>
+                        <div class="flex items-center justify-center gap-1.5 h-6 pt-1">
+                            <span class="soundwave-bar" style="animation-delay: 0.1s"></span>
+                            <span class="soundwave-bar" style="animation-delay: 0.3s"></span>
+                            <span class="soundwave-bar" style="animation-delay: 0.2s"></span>
+                            <span class="soundwave-bar" style="animation-delay: 0.4s"></span>
+                            <span class="soundwave-bar" style="animation-delay: 0.15s"></span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] font-mono text-[#a2b2ac] border-t border-emerald-900/40 pt-2">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-400"></i> Zero Cloud Tracking
+                        </span>
+                        <span class="text-xs text-emerald-400 font-semibold">Ready for Workspace Launch</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delay Countdown & Controls Bar -->
+            <div class="flex flex-col gap-3 pt-1">
+                <!-- Progress Bar -->
+                <div class="w-full bg-[#ede8dc] h-2 rounded-full overflow-hidden border border-[#ddd8cc]">
+                    <div id="countdownProgressBar" class="h-full bg-gradient-to-r from-[#173d34] via-[#285c4e] to-[#b7843f] transition-all duration-100 ease-linear" style="width: 100%;"></div>
+                </div>
+
+                <!-- Action Button -->
+                <div class="flex items-center justify-end">
+                    <a href="https://app.ruxt.org/" id="skipToSignInBtn" class="skip-btn-locked px-6 py-2.5 bg-[#173d34] text-[#fcfaf5] font-extrabold text-xs rounded-xl shadow-none transition-all flex items-center justify-center gap-2" aria-disabled="true" title="Please wait for orientation to finish">
+                        <span id="skipBtnLabel">Skip &amp; Sign In</span>
+                        <span id="skipBtnCountdownText" class="font-mono text-[11px] text-[#ffd580]"> (10s)</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Note -->
+    <footer class="relative z-10 w-full py-6 border-t border-[#ddd8cc] text-center text-xs text-[#68716d]">
+        <p>&copy; 2026 RuXt Technologies. Autonomous Multi-Agent AI System. All rights reserved.</p>
+    </footer>
+
+    <!-- Standalone Sign In Gateway Logic -->
+    <script>
+        const SIGN_IN_CONFIG = {
+            targetUrl: 'https://app.ruxt.org/',
+            delaySeconds: 10,
+            videoSrc: 'assets/video/intro.mp4',
+            autoRouteAfterDelay: true
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) window.lucide.createIcons();
+
+            const skipToSignInBtn = document.getElementById('skipToSignInBtn');
+            const skipBtnLabel = document.getElementById('skipBtnLabel');
+            const skipBtnCountdownText = document.getElementById('skipBtnCountdownText');
+            const countdownProgressBar = document.getElementById('countdownProgressBar');
+            const introVideoPlayer = document.getElementById('introVideoPlayer');
+            const introVideoFallback = document.getElementById('introVideoFallback');
+
+            let countdownInterval = null;
+            const totalDelayMs = (SIGN_IN_CONFIG.delaySeconds || 10) * 1000;
+            let remainingMs = totalDelayMs;
+            let isDelayCompleted = false;
+
+            function updateTimerDisplay() {
+                const secondsLeft = Math.ceil(remainingMs / 1000);
+                const displaySec = secondsLeft > 0 ? secondsLeft : 0;
+                if (countdownProgressBar) {
+                    const percentage = (remainingMs / totalDelayMs) * 100;
+                    countdownProgressBar.style.width = `${Math.max(0, Math.min(100, percentage))}%`;
+                }
+                if (skipBtnCountdownText && !isDelayCompleted) {
+                    skipBtnCountdownText.textContent = displaySec > 0 ? ` (${displaySec}s)` : '';
+                }
+            }
+
+            function onDelayCompleted() {
+                isDelayCompleted = true;
+                clearInterval(countdownInterval);
+                remainingMs = 0;
+                updateTimerDisplay();
+
+                if (skipToSignInBtn) {
+                    skipToSignInBtn.classList.remove('skip-btn-counting', 'skip-btn-locked');
+                    skipToSignInBtn.classList.add('skip-btn-active');
+                    skipToSignInBtn.removeAttribute('aria-disabled');
+                    if (skipBtnLabel) skipBtnLabel.textContent = 'Proceed to Sign In';
+                    if (skipBtnCountdownText) skipBtnCountdownText.textContent = '';
+                }
+
+                if (window.lucide) window.lucide.createIcons();
+
+                if (SIGN_IN_CONFIG.autoRouteAfterDelay) {
+                    setTimeout(() => {
+                        routeToSignIn('auto-timer');
+                    }, 1200);
+                }
+            }
+
+            function startCountdown() {
+                clearInterval(countdownInterval);
+                isDelayCompleted = false;
+                remainingMs = totalDelayMs;
+
+                if (skipToSignInBtn) {
+                    skipToSignInBtn.classList.remove('skip-btn-active');
+                    skipToSignInBtn.classList.add('skip-btn-locked');
+                    skipToSignInBtn.setAttribute('aria-disabled', 'true');
+                    if (skipBtnLabel) skipBtnLabel.textContent = 'Skip & Sign In';
+                    if (skipBtnCountdownText) skipBtnCountdownText.textContent = ` (${Math.ceil(totalDelayMs / 1000)}s)`;
+                }
+
+                updateTimerDisplay();
+
+                countdownInterval = setInterval(() => {
+                    if (!isDelayCompleted) {
+                        remainingMs -= 100;
+                        if (remainingMs <= 0) {
+                            onDelayCompleted();
+                        } else {
+                            updateTimerDisplay();
+                        }
+                    }
+                }, 100);
+            }
+
+            function routeToSignIn(triggerSource = 'user') {
+                clearInterval(countdownInterval);
+                if (introVideoPlayer) introVideoPlayer.pause();
+
+                const target = SIGN_IN_CONFIG.targetUrl || 'https://app.ruxt.org/';
+                window.location.href = target;
+            }
+
+            if (introVideoPlayer) {
+                const playPromise = introVideoPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        if (introVideoFallback) introVideoFallback.classList.add('hidden');
+                    }).catch(() => {
+                        if (introVideoFallback) introVideoFallback.classList.remove('hidden');
+                    });
+                }
+                introVideoPlayer.addEventListener('ended', () => {
+                    onDelayCompleted();
+                });
+            }
+
+            if (skipToSignInBtn) {
+                skipToSignInBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!isDelayCompleted) return false;
+                    routeToSignIn('skip-button');
+                });
+            }
+
+            startCountdown();
+        });
+    </script>
+</body>
+</html>

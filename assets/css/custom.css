@@ -625,3 +625,87 @@ input[type="range"]::-webkit-slider-thumb:hover {
         transition: none;
     }
 }
+
+
+/* ==========================================================================
+   Sign In Introduction Video Gateway Styles
+   ========================================================================== */
+.video-gateway-modal {
+    animation: gatewayFadeIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes gatewayFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.soundwave-bar {
+    display: inline-block;
+    width: 3.5px;
+    border-radius: 9999px;
+    background: #52b788;
+    transform-origin: bottom center;
+    animation: soundwaveAnim 1.2s ease-in-out infinite;
+}
+
+@keyframes soundwaveAnim {
+    0%, 100% {
+        height: 6px;
+        opacity: 0.6;
+    }
+    50% {
+        height: 22px;
+        opacity: 1;
+    }
+}
+
+/* Skip button strictly locked state during video intro delay */
+.skip-btn-locked,
+.skip-btn-counting {
+    opacity: 0.35 !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    user-select: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: grayscale(40%) !important;
+    transition: opacity 0.4s ease !important;
+}
+
+.skip-btn-locked:hover,
+.skip-btn-counting:hover {
+    opacity: 0.35 !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Skip button active state ONLY when delay completes */
+.skip-btn-active {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    user-select: auto !important;
+    filter: none !important;
+    animation: skipBtnGlow 2s infinite !important;
+    transition: all 0.3s ease !important;
+}
+
+@keyframes skipBtnGlow {
+    0%, 100% {
+        box-shadow: 0 4px 14px rgba(23, 61, 52, 0.2);
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 8px 24px rgba(183, 132, 63, 0.45);
+        transform: translateY(-1px);
+    }
+}
+

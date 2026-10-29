@@ -844,35 +844,36 @@
         </section>
 
         <!-- Deployment Packages & Editions Section -->
-        <section id="editions" class="py-20 bg-[#f5f2e9] border-y border-[#ddd8cc]">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-10">
-                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#b7843f] mb-3">Deployment Packages</h2>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#173d34] tracking-tight">
+        <section id="editions" class="deployment-section py-20 border-y border-[#ddd8cc]">
+            <div class="deployment-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="deployment-heading text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="deployment-eyebrow">Deployment Packages</h2>
+                    <h3 class="deployment-title">
                         Own Your Autonomous AI Board Today
                     </h3>
-                    <p class="text-sm sm:text-base text-[#68716d] mt-2">
+                    <p class="deployment-intro">
                         Select the deployment package tailored for your business workflow. Free updates included.
                     </p>
                 </div>
 
                 <!-- 3 Deployment Cards -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="edition-grid">
                     <!-- Tier 1: Starter -->
-                    <div class="bg-[#ffffff] rounded-3xl border border-[#ddd8cc] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+                    <article class="edition-card edition-card--starter">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-lg font-bold text-[#202725]">Starter Edition</h4>
-                                <span class="text-[10px] font-bold bg-[#f5f2e9] text-[#68716d] px-2.5 py-1 rounded-full uppercase tracking-wider">Solo Creator</span>
+                            <div class="edition-plan-head">
+                                <div>
+                                    <span class="edition-kicker">Essential workspace</span>
+                                    <h4>Starter Edition</h4>
+                                </div>
+                                <span class="edition-audience">Solo Creator</span>
                             </div>
-                            <p class="text-xs text-[#68716d] mb-6">
+                            <p class="edition-description">
                                 Perfect for solo developers, students, and freelancers who need an intelligent private companion.
                             </p>
-                            <div class="mb-6">
-                                <span class="text-xs font-bold text-[#173d34] bg-[#f5f2e9] px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Solo Deployment</span>
-                            </div>
+                            <span class="edition-type">Solo Deployment</span>
 
-                            <ul class="space-y-3 text-xs text-[#202725] mb-8">
+                            <ul class="edition-features">
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
                                     <span>RuXt AI Chief of Staff Companion</span>
@@ -900,29 +901,32 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Starter Edition" data-price="Inquire">
-                            Get Starter Edition
+                        <button class="open-order-btn edition-action" data-plan="Starter Edition" data-price="Inquire">
+                            <span>Get Starter Edition</span>
+                            <i data-lucide="arrow-up-right"></i>
                         </button>
-                    </div>
+                    </article>
 
                     <!-- Tier 2: Founder Executive Suite (Featured) -->
-                    <div class="bg-[#ffffff] rounded-3xl border-2 border-[#173d34] p-8 flex flex-col justify-between shadow-2xl relative">
-                        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#173d34] text-[#ffd580] text-[10px] font-extrabold uppercase px-3 py-1 rounded-full tracking-widest shadow-md">
-                            Most Popular · Best Value
+                    <article class="edition-card edition-card--featured">
+                        <div class="edition-popular-badge">
+                            <i data-lucide="sparkles"></i>
+                            <span>Most Popular · Best Value</span>
                         </div>
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-lg font-bold text-[#173d34]">Founder Executive Suite</h4>
-                                <span class="text-[10px] font-bold bg-[#173d34]/10 text-[#173d34] px-2.5 py-1 rounded-full uppercase tracking-wider">Unrestricted</span>
+                            <div class="edition-plan-head">
+                                <div>
+                                    <span class="edition-kicker">Complete boardroom</span>
+                                    <h4>Founder Executive Suite</h4>
+                                </div>
+                                <span class="edition-audience">Unrestricted</span>
                             </div>
-                            <p class="text-xs text-[#68716d] mb-6">
+                            <p class="edition-description">
                                 Complete autonomous board for startup founders, digital agency directors, and business operators.
                             </p>
-                            <div class="mb-6">
-                                <span class="text-xs font-bold text-[#173d34] bg-[#173d34]/10 px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Complete Autonomous Board</span>
-                            </div>
+                            <span class="edition-type">Complete Autonomous Board</span>
 
-                            <ul class="space-y-3 text-xs text-[#202725] mb-8 font-medium">
+                            <ul class="edition-features edition-features--featured">
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
                                     <span><strong>Complete Autonomous Boardroom</strong> (CMO, CTO, CFO, Lead)</span>
@@ -954,26 +958,28 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn btn-shimmer w-full py-3.5 rounded-full bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] text-xs font-extrabold transition-all shadow-lg active:scale-95" data-plan="Founder Executive Suite" data-price="Inquire">
-                            Deploy Founder Suite
+                        <button class="open-order-btn edition-action edition-action--primary" data-plan="Founder Executive Suite" data-price="Inquire">
+                            <span>Deploy Founder Suite</span>
+                            <i data-lucide="arrow-right"></i>
                         </button>
-                    </div>
+                    </article>
 
                     <!-- Tier 3: Agency & Reseller -->
-                    <div class="bg-[#ffffff] rounded-3xl border border-[#ddd8cc] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+                    <article class="edition-card edition-card--agency">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-lg font-bold text-[#202725]">Agency &amp; Reseller</h4>
-                                <span class="text-[10px] font-bold bg-[#b7843f]/10 text-[#b7843f] px-2.5 py-1 rounded-full uppercase tracking-wider">Commercial</span>
+                            <div class="edition-plan-head">
+                                <div>
+                                    <span class="edition-kicker">Scale for clients</span>
+                                    <h4>Agency &amp; Reseller</h4>
+                                </div>
+                                <span class="edition-audience">Commercial</span>
                             </div>
-                            <p class="text-xs text-[#68716d] mb-6">
+                            <p class="edition-description">
                                 For agencies and software consultants wanting to deploy RuXt to unlimited client installations.
                             </p>
-                            <div class="mb-6">
-                                <span class="text-xs font-bold text-[#b7843f] bg-[#b7843f]/10 px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Commercial Resale Rights</span>
-                            </div>
+                            <span class="edition-type">Commercial Resale Rights</span>
 
-                            <ul class="space-y-3 text-xs text-[#202725] mb-8">
+                            <ul class="edition-features">
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
                                     <span><strong>Everything in Founder Executive Suite</strong></span>
@@ -997,10 +1003,11 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Agency & Reseller" data-price="Inquire">
-                            Get Agency Commercial License
+                        <button class="open-order-btn edition-action" data-plan="Agency & Reseller" data-price="Inquire">
+                            <span>Get Agency License</span>
+                            <i data-lucide="arrow-up-right"></i>
                         </button>
-                    </div>
+                    </article>
                 </div>
 
                 <!-- Guarantee Banner -->

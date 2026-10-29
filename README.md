@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Deploy an autonomous AI Executive Board & Chief of Staff on your private machine.**  
-> 100% private SQLite database, zero SaaS subscription fees, Sinhala & English voice ready.
+> 100% private SQLite database, zero SaaS subscription fees, conversational voice AI ready.
 
 ---
 
@@ -17,11 +17,11 @@
 
 ## ⚡ Highlights
 
-- **Executive War Room**: 4 AI roles (Chief of Staff, CMO, CTO, CFO) that coordinate and deliberate together.
+- **Executive War Room**: 4 AI specialists (Chief of Staff, CMO, CTO, CFO) that coordinate and deliberate together.
 - **100% Private & Local-First**: SQLite database stored on your hardware. Zero third-party telemetry.
-- **Bi-Lingual Voice Support**: Fluent Sinhala and English voice command recognition and audio playback.
+- **Conversational Voice AI**: Low-latency voice command recognition (STT) and natural audio playback (TTS).
 - **Single-File Portable Architecture**: Clean HTML5/Tailwind/ES6 frontend + lightweight PHP/SQLite lead collection.
-- **Interactive Calculator & Live Simulator**: Real-time ROI and operational savings estimator.
+- **Interactive Live Simulator**: Multi-agent war room demo, Chief of Staff consultation, and Kanban pipeline.
 
 ---
 

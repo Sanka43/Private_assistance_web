@@ -30,95 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Currency Switcher (USD / LKR)
-    let currentCurrency = 'USD';
-    const currencyToggle = document.getElementById('currencyToggle');
-    const priceStarter = document.getElementById('priceStarter');
-    const priceFounder = document.getElementById('priceFounder');
-    const priceAgency = document.getElementById('priceAgency');
-
-    const pricingData = {
-        USD: {
-            starter: '$49',
-            starterPeriod: 'one-time lifetime access',
-            founder: '$99',
-            founderPeriod: 'one-time lifetime access',
-            agency: '$199',
-            agencyPeriod: 'one-time commercial license'
-        },
-        LKR: {
-            starter: 'Rs. 14,900',
-            starterPeriod: 'එක්වරක් පමණක් ගෙවීම',
-            founder: 'Rs. 29,900',
-            founderPeriod: 'එක්වරක් පමණක් ගෙවීම',
-            agency: 'Rs. 59,900',
-            agencyPeriod: 'වාණිජ අයිතිය සහිතව'
-        }
-    };
-
-    function updatePricingDisplay() {
-        if (!priceStarter || !priceFounder || !priceAgency) return;
-        const data = pricingData[currentCurrency];
-        priceStarter.textContent = data.starter;
-        priceFounder.textContent = data.founder;
-        priceAgency.textContent = data.agency;
-
-        const periodStarter = document.getElementById('periodStarter');
-        const periodFounder = document.getElementById('periodFounder');
-        const periodAgency = document.getElementById('periodAgency');
-        if (periodStarter) periodStarter.textContent = data.starterPeriod;
-        if (periodFounder) periodFounder.textContent = data.founderPeriod;
-        if (periodAgency) periodAgency.textContent = data.agencyPeriod;
-    }
-
-    if (currencyToggle) {
-        currencyToggle.addEventListener('change', (e) => {
-            currentCurrency = e.target.checked ? 'LKR' : 'USD';
-            updatePricingDisplay();
-        });
-    }
-
-    // 4. Interactive ROI & Cost-Savings Calculator
-    const teamSizeInput = document.getElementById('teamSizeSlider');
-    const monthlySpendInput = document.getElementById('monthlySpendSlider');
-    const teamSizeDisplay = document.getElementById('teamSizeDisplay');
-    const monthlySpendDisplay = document.getElementById('monthlySpendDisplay');
-    const annualSavingsDisplay = document.getElementById('annualSavingsDisplay');
-    const hoursSavedDisplay = document.getElementById('hoursSavedDisplay');
-    const roiMultiplierDisplay = document.getElementById('roiMultiplierDisplay');
-
-    function calculateSavings() {
-        if (!teamSizeInput || !monthlySpendInput) return;
-        const team = parseInt(teamSizeInput.value, 10);
-        const spendPerSeat = parseInt(monthlySpendInput.value, 10);
-
-        if (teamSizeDisplay) teamSizeDisplay.textContent = team === 1 ? '1 Founder / User' : `${team} Team Members`;
-        if (monthlySpendDisplay) monthlySpendDisplay.textContent = `$${spendPerSeat} / user / mo`;
-
-        const annualCurrentSpend = team * spendPerSeat * 12;
-        const ruxtCost = 99; // Founder license benchmark
-        const annualSavings = Math.max(0, annualCurrentSpend - ruxtCost);
-        const hoursSaved = team * 38; // approx 38 hrs per member saved monthly
-        const roiMultiplier = Math.round(annualSavings / ruxtCost);
-
-        if (annualSavingsDisplay) {
-            annualSavingsDisplay.textContent = `$${annualSavings.toLocaleString()}`;
-        }
-        if (hoursSavedDisplay) {
-            hoursSavedDisplay.textContent = `${hoursSaved} hrs`;
-        }
-        if (roiMultiplierDisplay) {
-            roiMultiplierDisplay.textContent = `${roiMultiplier}x ROI`;
-        }
-    }
-
-    if (teamSizeInput && monthlySpendInput) {
-        teamSizeInput.addEventListener('input', calculateSavings);
-        monthlySpendInput.addEventListener('input', calculateSavings);
-        calculateSavings(); // Initial run
-    }
-
-    // 5. Interactive Product Simulator (Tabs)
+    // 3. Interactive Product Simulator (Tabs)
     const demoTabs = document.querySelectorAll('.demo-tab-btn');
     const demoPanels = document.querySelectorAll('.demo-panel');
 
@@ -172,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 7. Order & Checkout Modal Logic
+    // 5. Order & Deployment Modal Logic
     const orderModal = document.getElementById('orderModal');
     const closeOrderModalBtn = document.getElementById('closeOrderModalBtn');
     const orderPlanName = document.getElementById('orderPlanName');
@@ -181,19 +93,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const openOrderButtons = document.querySelectorAll('.open-order-btn');
 
     let currentSelectedPlan = 'Founder Executive Suite';
-    let currentSelectedPrice = '$99 (One-Time)';
+    let currentSelectedPrice = 'Inquire';
 
     openOrderButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const plan = btn.getAttribute('data-plan') || 'Founder Executive Suite';
-            const price = btn.getAttribute('data-price') || '$99';
+            const price = btn.getAttribute('data-price') || 'Inquire';
 
             currentSelectedPlan = plan;
             currentSelectedPrice = price;
 
             if (orderPlanName) orderPlanName.textContent = plan;
-            if (orderPlanPrice) orderPlanPrice.textContent = `${price} · Lifetime Ownership`;
+            if (orderPlanPrice) orderPlanPrice.textContent = 'Lifetime Private License';
             if (selectedPlanInput) selectedPlanInput.value = plan;
 
             if (orderModal) {
@@ -213,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Direct WhatsApp Checkout trigger
+    // Direct WhatsApp Inquiry trigger
     const whatsappOrderBtn = document.getElementById('whatsappOrderBtn');
     if (whatsappOrderBtn) {
         whatsappOrderBtn.addEventListener('click', () => {
@@ -226,11 +138,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const greeting = buyerName ? `Hello! My name is ${buyerName}.` : 'Hello!';
             const emailText = buyerEmail ? ` (Email: ${buyerEmail})` : '';
             const msg = encodeURIComponent(
-                `${greeting} I want to purchase RuXt AI - ${currentSelectedPlan} [${currentSelectedPrice}]${emailText}. Please share the payment and setup instructions.`
+                `${greeting} I want to inquire about RuXt AI - ${currentSelectedPlan}${emailText}. Please share the deployment and setup instructions.`
             );
 
-            // Change to target WhatsApp number or Sri Lankan seller number (defaults to international format)
-            const targetWhatsApp = '94770000000'; // User can customize in config
+            const targetWhatsApp = '94770000000';
             window.open(`https://wa.me/${targetWhatsApp}?text=${msg}`, '_blank');
         });
     }
@@ -266,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const phoneText = formData.phone ? ` (Phone: ${formData.phone})` : '';
                 const noteText = formData.note ? ` Note: ${formData.note}` : '';
                 const msg = encodeURIComponent(
-                    `${greeting} I want to purchase RuXt AI - ${formData.plan} [${formData.price}]${emailText}${phoneText}.${noteText}`
+                    `${greeting} I want to inquire about RuXt AI - ${formData.plan}${emailText}${phoneText}.${noteText}`
                 );
                 const targetWhatsApp = '94770000000';
 
@@ -274,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     orderStatusMsg.className = 'p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium space-y-1';
                     orderStatusMsg.innerHTML = `
                         <div class="font-bold text-emerald-900 flex items-center gap-1.5">
-                            <span>🎉 Order Details Ready!</span>
+                            <span>🎉 Deployment Request Ready!</span>
                         </div>
                         <p>Opening WhatsApp to connect with our deployment team. You can also message directly at +94 77 000 0000.</p>
                     `;
@@ -286,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 orderForm.reset();
                 if (submitOrderBtn) {
                     submitOrderBtn.disabled = false;
-                    submitOrderBtn.innerHTML = '<span>Submit Order &amp; Get Bank Details</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
+                    submitOrderBtn.innerHTML = '<span>Submit Deployment Request</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
                     if (window.lucide) window.lucide.createIcons();
                 }
                 return;
@@ -324,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } finally {
                 if (submitOrderBtn) {
                     submitOrderBtn.disabled = false;
-                    submitOrderBtn.innerHTML = '<span>Submit Order &amp; Get Bank Details</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
+                    submitOrderBtn.innerHTML = '<span>Submit Deployment Request</span><i data-lucide="arrow-right" class="w-4 h-4"></i>';
                     if (window.lucide) window.lucide.createIcons();
                 }
             }

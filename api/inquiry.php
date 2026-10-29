@@ -42,7 +42,7 @@ if ($method === 'POST') {
     $name = isset($data['name']) ? trim(strip_tags($data['name'])) : '';
     $email = isset($data['email']) ? filter_var(trim($data['email']), FILTER_VALIDATE_EMAIL) : false;
     $plan = isset($data['plan']) ? trim(strip_tags($data['plan'])) : 'Founder Executive Suite';
-    $price = isset($data['price']) ? trim(strip_tags($data['price'])) : '$99';
+    $price = isset($data['price']) ? trim(strip_tags($data['price'])) : 'Inquire';
     $phone = isset($data['phone']) ? trim(strip_tags($data['phone'])) : '';
     $note = isset($data['note']) ? trim(strip_tags($data['note'])) : '';
 

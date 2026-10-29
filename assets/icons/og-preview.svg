@@ -54,7 +54,7 @@
       Deploy an autonomous team of AI specialists—Chief of Staff, CMO, CTO, CFO.
     </text>
     <text x="0" y="270" font-family="'DM Sans', system-ui, sans-serif" font-weight="400" font-size="20" fill="#c3cfca">
-      100% Private local database • Zero SaaS subscriptions • Sinhala &amp; English Voice.
+      100% Private local database • Zero SaaS subscriptions • Conversational Voice AI.
     </text>
 
     <!-- Badges Row -->
@@ -66,7 +66,7 @@
       <text x="270" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">⚡ Zero Monthly Fees</text>
 
       <rect x="380" y="0" width="180" height="42" rx="10" fill="#173d34" stroke="#285c4e" stroke-width="1.5"/>
-      <text x="470" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">🎙️ Bilingual Voice</text>
+      <text x="470" y="26" font-family="'DM Sans', system-ui, sans-serif" font-weight="600" font-size="14" fill="#fcfaf5" text-anchor="middle">🎙️ Voice AI Ready</text>
     </g>
   </g>
 
@@ -112,8 +112,8 @@
     <!-- Bottom Stat Pill -->
     <g transform="translate(20, 320)">
       <rect width="350" height="100" rx="14" fill="#173d34" stroke="#799a87" stroke-width="1"/>
-      <text x="175" y="40" font-family="'DM Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#a7f3d0" text-anchor="middle">\$18,400+ / yr</text>
-      <text x="175" y="68" font-family="'DM Sans', system-ui, sans-serif" font-size="12" fill="#c3cfca" text-anchor="middle">Average Annual SaaS &amp; Agency Savings</text>
+      <text x="175" y="40" font-family="'DM Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#a7f3d0" text-anchor="middle">100% Sovereign</text>
+      <text x="175" y="68" font-family="'DM Sans', system-ui, sans-serif" font-size="12" fill="#c3cfca" text-anchor="middle">Self-Hosted Autonomous Executive Stack</text>
     </g>
   </g>
 </svg>

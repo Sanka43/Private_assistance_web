@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /api/data/
 
-Sitemap: http://localhost/Private_assistance_web/sitemap.xml
+Sitemap: https://sanka43.github.io/Private_assistance_web/sitemap.xml

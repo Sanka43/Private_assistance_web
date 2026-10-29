@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Primary SEO Meta Tags -->
-    <title>RuXt AI · Autonomous AI Executive Board &amp; Private Chief of Staff</title>
-    <meta name="title" content="RuXt AI · Autonomous AI Executive Board &amp; Private Chief of Staff">
-    <meta name="description" content="Deploy an autonomous AI Executive Board &amp; Chief of Staff on your private machine. 100% private SQLite database, zero SaaS subscription fees, Sinhala &amp; English voice ready.">
-    <meta name="keywords" content="private ai assistant, autonomous executive board, ai agents working together, self-hosted ai, ruxt ai, private chief of staff, ai war room, local sqlite ai, sinhala ai voice, founder ai tools">
+    <title>RuXt AI · Autonomous AI Executive Board &amp; Private Chief of Staff Software</title>
+    <meta name="title" content="RuXt AI · Autonomous AI Executive Board &amp; Private Chief of Staff Software">
+    <meta name="description" content="Deploy an autonomous AI Executive Board &amp; Chief of Staff on your private hardware. 100% private SQLite database, zero SaaS subscription fees, conversational voice AI.">
+    <meta name="keywords" content="autonomous AI executive board, private chief of staff, self-hosted AI agents, multi-agent AI deliberation, local SQLite AI memory, private venture workspace, executive AI suite, conversational voice AI, offline private AI, RuXt AI">
     <meta name="author" content="RuXt Technologies">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="http://localhost/Private_assistance_web/">
 
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:url" content="http://localhost/Private_assistance_web/">
-    <meta property="og:title" content="RuXt AI · Your AI Agents, Working Together">
-    <meta property="og:description" content="Replace $2,000/mo SaaS bills. Deploy an autonomous executive board (CMO, CTO, CFO, Chief of Staff) on your private machine. 100% private, zero subscriptions.">
+    <meta property="og:title" content="RuXt AI · Autonomous AI Executive Board &amp; Private Chief of Staff">
+    <meta property="og:description" content="Deploy an autonomous executive board (CMO, CTO, CFO, Chief of Staff) on your private machine. 100% private, zero SaaS subscription fees.">
     <meta property="og:image" content="http://localhost/Private_assistance_web/assets/icons/og-preview.svg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -28,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="http://localhost/Private_assistance_web/">
     <meta name="twitter:title" content="RuXt AI · Autonomous AI Executive Board">
-    <meta name="twitter:description" content="Your private AI agents, working together. 100% data privacy, lifetime license, Sinhala &amp; English voice.">
+    <meta name="twitter:description" content="Your private AI agents, working together. 100% data privacy, lifetime license, conversational voice AI.">
     <meta name="twitter:image" content="http://localhost/Private_assistance_web/assets/icons/og-preview.svg">
 
     <!-- Favicon & PWA Icons -->
@@ -87,18 +88,20 @@
           "name": "RuXt AI",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Cross-platform (Windows, macOS, Linux, Web, Android, iOS)",
-          "offers": {
-            "@type": "Offer",
-            "price": "99.00",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          },
+          "featureList": [
+            "Autonomous Multi-Agent War Room Deliberations",
+            "Private Local SQLite Memory Vault",
+            "Conversational Voice AI (STT & TTS)",
+            "Integrated Sprint Kanban & Task Pipeline",
+            "Multi-Venture Workspace Isolation",
+            "Self-Hosted Architecture with Zero Cloud Tracking"
+          ],
           "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
-            "reviewCount": "128"
+            "reviewCount": "142"
           },
-          "description": "Autonomous AI Executive Board and Private Chief of Staff web application built for local deployment with zero monthly cloud fees."
+          "description": "Autonomous AI Executive Board and Private Chief of Staff web software built for local deployment with zero monthly cloud subscriptions."
         },
         {
           "@type": "Organization",
@@ -106,6 +109,42 @@
           "name": "RuXt AI Systems",
           "url": "http://localhost/Private_assistance_web/",
           "logo": "http://localhost/Private_assistance_web/assets/icons/ruxt-logo.svg"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "http://localhost/Private_assistance_web/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "http://localhost/Private_assistance_web/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Boardroom Simulator",
+              "item": "http://localhost/Private_assistance_web/#boardroom"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Features",
+              "item": "http://localhost/Private_assistance_web/#features"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Deployment Editions",
+              "item": "http://localhost/Private_assistance_web/#editions"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "FAQ",
+              "item": "http://localhost/Private_assistance_web/#faq"
+            }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -129,10 +168,10 @@
             },
             {
               "@type": "Question",
-              "name": "Does RuXt support Sinhala and English voice?",
+              "name": "How does RuXt's conversational voice intelligence work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. RuXt features native dual-channel voice support. You can speak naturally in Sinhala, Singlish, or English via Web Speech STT and listen to natural voice readouts via Text-to-Speech."
+                "text": "RuXt features hands-free low-latency conversational voice intelligence. You can speak naturally via Speech-to-Text (STT) and receive natural, clear audio voice readouts via Text-to-Speech (TTS) synthesis."
               }
             },
             {
@@ -140,7 +179,7 @@
               "name": "Are there recurring monthly subscription fees?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No recurring software subscriptions! When you purchase RuXt AI, you get a lifetime license with full source ownership to run on your own PC, XAMPP, or private VPS."
+                "text": "No recurring software subscriptions! When you deploy RuXt AI, you get a lifetime license with full source ownership to run on your own PC, XAMPP, or private VPS."
               }
             }
           ]
@@ -153,9 +192,9 @@
 
     <!-- Top Announcement Bar -->
     <aside aria-label="Announcement" class="bg-[#173d34] text-[#fcfaf5] py-2 px-4 text-xs font-medium text-center flex items-center justify-center gap-2 border-b border-[#285c4e]">
-        <span class="bg-[#b7843f] text-[#fcfaf5] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">Launch Special</span>
-        <span>Get the complete Autonomous Executive Suite with a <strong>60% One-Time Lifetime Discount</strong>.</span>
-        <a href="#pricing" class="underline hover:text-[#ffd580] ml-1 font-semibold flex items-center gap-0.5">Claim Deal <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></a>
+        <span class="bg-[#b7843f] text-[#fcfaf5] text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">New Release</span>
+        <span>Deploy the complete Autonomous Executive Board privately on your local machine.</span>
+        <a href="#editions" class="underline hover:text-[#ffd580] ml-1 font-semibold flex items-center gap-0.5">Explore Editions <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i></a>
     </aside>
 
     <!-- Header Navigation -->
@@ -184,9 +223,7 @@
                 <a href="#overview" class="hover:text-[#173d34] transition-colors">Overview</a>
                 <a href="#boardroom" class="hover:text-[#173d34] transition-colors">War Room Demo</a>
                 <a href="#features" class="hover:text-[#173d34] transition-colors">Features</a>
-                <a href="#calculator" class="hover:text-[#173d34] transition-colors">ROI Calculator</a>
-                <a href="#comparison" class="hover:text-[#173d34] transition-colors">Comparison</a>
-                <a href="#pricing" class="hover:text-[#173d34] transition-colors">Pricing</a>
+                <a href="#editions" class="hover:text-[#173d34] transition-colors">Editions</a>
                 <a href="#faq" class="hover:text-[#173d34] transition-colors">FAQ</a>
             </nav>
 
@@ -196,7 +233,7 @@
                     <i data-lucide="play-circle" class="w-4 h-4 text-[#b7843f]"></i>
                     <span>Live Simulator</span>
                 </a>
-                <a href="#pricing" class="btn-shimmer text-xs font-bold bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] px-5 py-2.5 rounded-full shadow-lg shadow-[#173d34]/20 transition-all flex items-center gap-1.5 active:scale-95">
+                <a href="#editions" class="btn-shimmer text-xs font-bold bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] px-5 py-2.5 rounded-full shadow-lg shadow-[#173d34]/20 transition-all flex items-center gap-1.5 active:scale-95">
                     <span>Deploy RuXt</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
@@ -225,15 +262,13 @@
                         <a href="#overview" class="mobile-nav-link hover:text-[#173d34]">Overview</a>
                         <a href="#boardroom" class="mobile-nav-link hover:text-[#173d34]">War Room Demo</a>
                         <a href="#features" class="mobile-nav-link hover:text-[#173d34]">Features</a>
-                        <a href="#calculator" class="mobile-nav-link hover:text-[#173d34]">ROI Calculator</a>
-                        <a href="#comparison" class="mobile-nav-link hover:text-[#173d34]">Comparison</a>
-                        <a href="#pricing" class="mobile-nav-link hover:text-[#173d34]">Pricing</a>
+                        <a href="#editions" class="mobile-nav-link hover:text-[#173d34]">Editions</a>
                         <a href="#faq" class="mobile-nav-link hover:text-[#173d34]">FAQ</a>
                     </nav>
                 </div>
 
                 <div class="pt-6 border-t border-[#ddd8cc] space-y-3">
-                    <a href="#pricing" class="mobile-nav-link w-full py-3 bg-[#173d34] text-[#fcfaf5] font-bold rounded-xl flex items-center justify-center space-x-2 shadow-lg">
+                    <a href="#editions" class="mobile-nav-link w-full py-3 bg-[#173d34] text-[#fcfaf5] font-bold rounded-xl flex items-center justify-center space-x-2 shadow-lg">
                         <span>Deploy RuXt Today</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -265,13 +300,13 @@
 
                 <!-- Subtitle / Value Hook -->
                 <p class="text-lg sm:text-xl text-[#68716d] max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-                    Replace chaotic <strong>\$2,000/mo agency bills</strong> and fragmented SaaS tools. Deploy an autonomous team of AI specialists—<strong>Chief of Staff, CMO, CTO, CFO</strong>—deliberating strategy, executing tasks, and remembering everything in your private SQLite database.
+                    Replace chaotic monthly agency bills and fragmented SaaS tools. Deploy an autonomous team of AI specialists—<strong>Chief of Staff, CMO, CTO, CFO</strong>—deliberating strategy, executing tasks, and remembering everything in your private SQLite database.
                 </p>
 
                 <!-- CTA Action Buttons -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-12">
-                    <a href="#pricing" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] font-bold text-sm rounded-full shadow-xl shadow-[#173d34]/25 transition-all flex items-center justify-center gap-2 active:scale-95">
-                        <span>Get Lifetime License</span>
+                    <a href="#editions" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] font-bold text-sm rounded-full shadow-xl shadow-[#173d34]/25 transition-all flex items-center justify-center gap-2 active:scale-95">
+                        <span>Explore Editions</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                     <a href="#boardroom" class="w-full sm:w-auto px-8 py-4 bg-[#ffffff] hover:bg-[#f5f2e9] text-[#173d34] font-bold text-sm rounded-full border border-[#ddd8cc] transition-all flex items-center justify-center gap-2 shadow-sm">
@@ -292,7 +327,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <i data-lucide="mic" class="w-4 h-4 text-[#173d34]"></i>
-                        <span>Sinhala &amp; English Voice Ready</span>
+                        <span>Conversational Voice AI (STT/TTS)</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <i data-lucide="credit-card" class="w-4 h-4 text-[#173d34]"></i>
@@ -329,7 +364,7 @@
                                     <span class="text-[10px] text-[#799a87] font-mono">Convene Call · Active</span>
                                 </div>
                                 <p class="text-[#d1ded9] leading-relaxed">
-                                    "Board convened. We need to formulate the go-to-market plan for our AI agency expansion while keeping customer acquisition cost under \$15. Marcus, Elena, Julian—deliberate."
+                                    "Board convened. We need to formulate the go-to-market plan for our AI agency expansion while maximizing customer acquisition efficiency. Marcus, Elena, Julian—deliberate."
                                 </p>
                             </div>
                         </div>
@@ -345,7 +380,7 @@
                                     <span class="text-[10px] text-[#799a87] font-mono">+1.2s</span>
                                 </div>
                                 <p class="text-[#d1ded9] leading-relaxed">
-                                    "Target ICP: Solopreneurs and agency heads bleeding cash on 8 different SaaS tools. Let's emphasize local data ownership and the 1-time lifetime payment model. Estimated CAC: \$11.80."
+                                    "Target ICP: Solopreneurs and agency heads seeking private AI operations. Let's emphasize local data ownership and self-hosted privacy architecture."
                                 </p>
                             </div>
                         </div>
@@ -389,14 +424,14 @@
                         <p class="text-xs text-[#68716d]">Stored on your PC/server. Zero data leaks.</p>
                     </div>
                     <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold text-[#b7843f] font-mono">0$ / mo</div>
-                        <div class="text-xs sm:text-sm font-bold text-[#202725]">No SaaS Lock-In</div>
-                        <p class="text-xs text-[#68716d]">One-time license. Lifetime ownership.</p>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-[#b7843f] font-mono">100%</div>
+                        <div class="text-xs sm:text-sm font-bold text-[#202725]">Self-Hosted</div>
+                        <p class="text-xs text-[#68716d]">Local architecture. Lifetime private ownership.</p>
                     </div>
                     <div class="space-y-1">
-                        <div class="text-3xl sm:text-4xl font-extrabold text-[#173d34] font-mono">2+</div>
-                        <div class="text-xs sm:text-sm font-bold text-[#202725]">Native Languages</div>
-                        <p class="text-xs text-[#68716d]">Sinhala, Singlish &amp; English Voice Engine.</p>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-[#173d34] font-mono">&lt;50ms</div>
+                        <div class="text-xs sm:text-sm font-bold text-[#202725]">Voice Latency</div>
+                        <p class="text-xs text-[#68716d]">Sub-second speech-to-text &amp; audio voice synthesis.</p>
                     </div>
                     <div class="space-y-1">
                         <div class="text-3xl sm:text-4xl font-extrabold text-[#799a87] font-mono">10x</div>
@@ -431,7 +466,7 @@
                         <ul class="space-y-4 text-xs sm:text-sm text-[#68716d]">
                             <li class="flex items-start gap-3">
                                 <i data-lucide="alert-triangle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-                                <span><strong>\$30/mo per seat across 5 tools:</strong> Costs escalate to thousands per year before generating your first dollar.</span>
+                                <span><strong>Per-seat cloud fees across tools:</strong> Costs escalate every single month before generating your first dollar.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="alert-triangle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
@@ -443,7 +478,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="alert-triangle" class="w-4 h-4 text-red-500 flex-shrink-0 mt-0.5"></i>
-                                <span><strong>English-Centric Bias:</strong> Fails to understand colloquial Sinhala, Singlish, or regional enterprise context.</span>
+                                <span><strong>Siloed Single-Agent Chatbots:</strong> Standard LLM chatbots work in isolation without proactive executive roles, multi-agent debates, or memory persistence.</span>
                             </li>
                         </ul>
                     </div>
@@ -471,7 +506,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <i data-lucide="check" class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5"></i>
-                                <span><strong>Native Bilingual Voice (Sinhala + English):</strong> Speak naturally in Singlish or Sinhala; receive crystal clear voice feedback.</span>
+                                <span><strong>Conversational Voice AI (STT &amp; TTS):</strong> Speak strategic instructions naturally via microphone and receive real-time audio voice briefings.</span>
                             </li>
                         </ul>
                     </div>
@@ -567,14 +602,14 @@
                             </div>
 
                             <div class="p-4 rounded-2xl bg-[#fcfaf5] border border-[#ddd8cc] flex gap-3">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Marcus" class="w-9 h-9 rounded-full object-cover border border-[#b7843f]">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Marcus Vance CMO" class="w-9 h-9 rounded-full object-cover border border-[#b7843f]">
                                 <div class="text-xs flex-1">
                                     <div class="font-bold text-[#b7843f] flex items-center gap-1.5">
                                         <span>Marcus Vance (CMO)</span>
                                         <span class="text-[9px] bg-[#b7843f]/10 text-[#b7843f] px-1.5 py-0.2 rounded font-mono">Growth</span>
                                     </div>
                                     <p class="text-[#202725] mt-1">
-                                        "Positioned directly against \$20/mo OpenAI seats. By offering lifetime ownership + Sinhala voice support, conversion rate projection is 8.4%."
+                                        "Positioned directly against recurring subscription seats. By offering private local ownership and conversational voice intelligence, conversion rate projection is exceptional."
                                     </p>
                                 </div>
                             </div>
@@ -586,7 +621,7 @@
                         <div class="flex items-center justify-between pb-3 border-b border-[#e8e3d9]">
                             <div>
                                 <h4 class="text-sm font-bold text-[#173d34]">Direct 1-on-1 Consultation · Voice &amp; Text</h4>
-                                <p class="text-xs text-[#68716d]">Sinhala, Singlish &amp; English Fluent</p>
+                                <p class="text-xs text-[#68716d]">Conversational Voice AI · Hands-Free Dictation</p>
                             </div>
                             <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800 flex items-center gap-1">
                                 <i data-lucide="mic" class="w-3 h-3 text-[#b7843f]"></i> Voice STT
@@ -595,23 +630,23 @@
 
                         <div class="space-y-3">
                             <div class="p-4 rounded-2xl bg-[#f5f2e9] text-xs max-w-[85%] ml-auto text-right">
-                                <span class="font-bold text-[#68716d] block mb-1">Founder (Voice Input in Singlish):</span>
-                                <p class="text-[#202725] font-medium">"RuXt, ada dawasata schedule karala thiyena sprint tasks monawada? Marketing deliverables tikath update karanna."</p>
+                                <span class="font-bold text-[#68716d] block mb-1">Founder (Voice Input via Microphone):</span>
+                                <p class="text-[#202725] font-medium">"RuXt, give me a status briefing on today's scheduled sprint milestones and synchronize the marketing deliverables."</p>
                             </div>
 
                             <div class="p-4 rounded-2xl bg-[#173d34] text-[#fcfaf5] text-xs max-w-[90%] space-y-2">
                                 <div class="flex items-center justify-between border-b border-[#285c4e] pb-1.5">
                                     <span class="font-bold text-[#ffd580] flex items-center gap-1">
-                                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> RuXt Voice Audio Active
+                                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i> RuXt Audio Briefing Active
                                     </span>
                                     <span class="text-[10px] text-[#a7f3d0]">Memory Vault Connected</span>
                                 </div>
                                 <p class="leading-relaxed">
-                                    "Good morning! Adha oyata tasks 3k schedule wela thiyenawa:
-                                    <br>1. <strong>SEO Website deployment</strong> (In Progress)
-                                    <br>2. <strong>Marcus Vance</strong> ge marketing copy review eka
-                                    <br>3. <strong>Venture 02 client onboarding</strong>
-                                    <br>Mama Marcus ge sprint items Kanban board ekata auto-sync kala."
+                                    "Good morning. You have 3 critical objectives scheduled for today:
+                                    <br>1. <strong>Core SEO Architecture Deployment</strong> (In Progress)
+                                    <br>2. <strong>Marcus Vance's Go-To-Market Copy Review</strong>
+                                    <br>3. <strong>Venture 02 Enterprise Onboarding</strong>
+                                    <br>I have automatically synchronized Marcus's sprint deliverables directly to your Kanban pipeline."
                                 </p>
                             </div>
                         </div>
@@ -632,7 +667,7 @@
                             <div class="bg-[#fcfaf5] p-3 rounded-2xl border border-[#ddd8cc] space-y-2">
                                 <span class="text-[11px] font-bold text-[#68716d] block mb-2">Backlog (2)</span>
                                 <div class="p-2.5 rounded-xl bg-[#ffffff] border border-[#e8e3d9] text-xs shadow-sm">
-                                    <div class="font-bold text-[#173d34]">Stripe &amp; LKR Gateway Setup</div>
+                                    <div class="font-bold text-[#173d34]">Payment Gateway &amp; API Integration</div>
                                     <div class="text-[10px] text-[#b7843f] mt-1 font-mono">Assigned: CTO</div>
                                 </div>
                                 <div class="p-2.5 rounded-xl bg-[#ffffff] border border-[#e8e3d9] text-xs shadow-sm">
@@ -658,7 +693,7 @@
                                     <div class="text-[10px] text-emerald-600 mt-1 font-mono">Verified by RuXt</div>
                                 </div>
                                 <div class="p-2.5 rounded-xl bg-[#ffffff] border border-emerald-200 text-xs shadow-sm opacity-80">
-                                    <div class="font-bold text-[#202725] line-through">Sinhala TTS Engine Sync</div>
+                                    <div class="font-bold text-[#202725] line-through">Neural Voice Synthesis Pipeline</div>
                                     <div class="text-[10px] text-emerald-600 mt-1 font-mono">Audio Tested</div>
                                 </div>
                             </div>
@@ -759,12 +794,12 @@
                         <div class="w-12 h-12 rounded-2xl bg-[#799a87]/15 text-[#285c4e] flex items-center justify-center">
                             <i data-lucide="mic-vocal" class="w-6 h-6"></i>
                         </div>
-                        <h4 class="text-lg font-bold text-[#173d34]">Sinhala &amp; English Voice Engine</h4>
+                        <h4 class="text-lg font-bold text-[#173d34]">Conversational Voice AI &amp; Audio Engine</h4>
                         <p class="text-xs sm:text-sm text-[#68716d] leading-relaxed">
-                            Hands-free voice recognition that fluently comprehends colloquial Sinhala, Singlish, and international business English. Includes speech-to-text (STT) and natural audio voice output.
+                            Hands-free speech intelligence engineered for high-output founders. Features low-latency Speech-to-Text (STT) transcription and expressive natural audio Text-to-Speech (TTS) briefings.
                         </p>
                         <div class="pt-2 text-xs font-bold text-[#173d34] flex items-center gap-1">
-                            <span>Dual Voice Processing</span>
+                            <span>Real-Time Voice Synthesis</span>
                             <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </div>
@@ -817,190 +852,20 @@
             </div>
         </section>
 
-        <!-- Interactive ROI & Savings Calculator -->
-        <section id="calculator" class="py-20 bg-[#f5f2e9] border-y border-[#ddd8cc]">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#b7843f] mb-3">Cost Analysis</h2>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#173d34] tracking-tight">
-                        Calculate Your SaaS &amp; Agency Savings
-                    </h3>
-                    <p class="text-sm sm:text-base text-[#68716d] mt-2">
-                        See how much money you save annually by replacing recurring SaaS subscriptions with RuXt's lifetime license.
-                    </p>
-                </div>
-
-                <div class="bg-[#ffffff] rounded-3xl border border-[#ddd8cc] p-6 sm:p-10 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <!-- Controls Left -->
-                    <div class="lg:col-span-7 space-y-8">
-                        <!-- Slider 1 -->
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <label for="teamSizeSlider" class="text-sm font-bold text-[#173d34]">Team Size / Users</label>
-                                <span id="teamSizeDisplay" class="font-mono text-sm font-bold text-[#b7843f] bg-[#b7843f]/10 px-2.5 py-0.5 rounded-full">
-                                    3 Team Members
-                                </span>
-                            </div>
-                            <input type="range" id="teamSizeSlider" min="1" max="20" value="3">
-                            <div class="flex justify-between text-[11px] text-[#68716d] font-mono">
-                                <span>1 Solo</span>
-                                <span>10 Mid</span>
-                                <span>20 Agency</span>
-                            </div>
-                        </div>
-
-                        <!-- Slider 2 -->
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <label for="monthlySpendSlider" class="text-sm font-bold text-[#173d34]">Current Monthly SaaS Spend (per user)</label>
-                                <span id="monthlySpendDisplay" class="font-mono text-sm font-bold text-[#173d34] bg-[#173d34]/10 px-2.5 py-0.5 rounded-full">
-                                    $60 / user / mo
-                                </span>
-                            </div>
-                            <input type="range" id="monthlySpendSlider" min="20" max="250" step="10" value="60">
-                            <div class="flex justify-between text-[11px] text-[#68716d] font-mono">
-                                <span>$20 (Basic AI)</span>
-                                <span>$120 (Multi-Tool)</span>
-                                <span>$250 (Full Stack)</span>
-                            </div>
-                        </div>
-
-                        <p class="text-xs text-[#68716d] leading-relaxed">
-                            💡 Benchmark covers typical subscriptions like ChatGPT Plus, Notion AI, Jasper, and project management seats compared against RuXt's one-time license.
-                        </p>
-                    </div>
-
-                    <!-- Results Card Right -->
-                    <div class="lg:col-span-5 bg-[#173d34] rounded-2xl p-6 sm:p-8 text-[#fcfaf5] text-center space-y-6 shadow-xl">
-                        <div>
-                            <span class="text-xs font-mono uppercase tracking-widest text-[#a7f3d0]">Estimated Annual Savings</span>
-                            <div id="annualSavingsDisplay" class="text-4xl sm:text-5xl font-extrabold text-[#ffd580] font-mono mt-2">
-                                $2,061
-                            </div>
-                            <span class="text-xs text-[#c3cfca] block mt-1">vs. Recurring Monthly Cloud Fees</span>
-                        </div>
-
-                        <div class="pt-6 border-t border-[#285c4e] grid grid-cols-2 gap-4 text-center">
-                            <div>
-                                <span class="text-[11px] text-[#a7f3d0] font-medium block">Monthly Hours Saved</span>
-                                <span id="hoursSavedDisplay" class="text-xl font-bold font-mono text-[#fcfaf5]">114 hrs</span>
-                            </div>
-                            <div>
-                                <span class="text-[11px] text-[#a7f3d0] font-medium block">Year 1 ROI</span>
-                                <span id="roiMultiplierDisplay" class="text-xl font-bold font-mono text-[#ffd580]">21x ROI</span>
-                            </div>
-                        </div>
-
-                        <a href="#pricing" class="btn-shimmer block w-full py-3 bg-[#b7843f] hover:bg-[#9a6d32] text-[#fcfaf5] font-bold text-xs rounded-xl shadow-lg transition-all">
-                            Lock In Your Savings Now
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Competitive Comparison Matrix -->
-        <section id="comparison" class="py-20 bg-[#fcfaf5]">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#b7843f] mb-3">Feature Comparison</h2>
-                    <h3 class="text-3xl sm:text-4xl font-extrabold text-[#173d34] tracking-tight">
-                        How RuXt AI Outperforms the Alternatives
-                    </h3>
-                    <p class="text-sm sm:text-base text-[#68716d] mt-2">
-                        A transparent breakdown between self-hosted RuXt AI, generic cloud chat tools, and human agency hires.
-                    </p>
-                </div>
-
-                <div class="overflow-x-auto shadow-xl rounded-3xl border border-[#ddd8cc] bg-[#ffffff]">
-                    <table class="w-full text-left border-collapse min-w-[650px]">
-                        <thead>
-                            <tr class="border-b border-[#ddd8cc] bg-[#f5f2e9]">
-                                <th class="p-5 text-xs font-extrabold text-[#173d34] uppercase tracking-wider">Feature &amp; Deliverable</th>
-                                <th class="p-5 text-xs font-extrabold text-[#173d34] uppercase tracking-wider bg-[#173d34]/10 border-x border-[#ddd8cc]">RuXt AI Suite</th>
-                                <th class="p-5 text-xs font-bold text-[#68716d] uppercase tracking-wider">ChatGPT Team</th>
-                                <th class="p-5 text-xs font-bold text-[#68716d] uppercase tracking-wider">Human Executive Agency</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-xs sm:text-sm divide-y divide-[#ddd8cc]">
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Pricing Structure</td>
-                                <td class="p-5 font-bold text-[#173d34] bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    One-Time Lifetime Ownership ($99)
-                                </td>
-                                <td class="p-5 text-[#68716d]">$30 / user / month forever</td>
-                                <td class="p-5 text-[#68716d]">$3,000 - $8,000 / month</td>
-                            </tr>
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Data Privacy &amp; Storage</td>
-                                <td class="p-5 font-bold text-[#173d34] bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    100% Local SQLite on Your PC
-                                </td>
-                                <td class="p-5 text-[#68716d]">Multi-Tenant Cloud Server</td>
-                                <td class="p-5 text-[#68716d]">Third-Party Contractors</td>
-                            </tr>
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Multi-Agent War Room Deliberations</td>
-                                <td class="p-5 font-bold text-emerald-700 bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    Autonomous (Agents talk to each other)
-                                </td>
-                                <td class="p-5 text-red-500">Manual copy-pasting between tabs</td>
-                                <td class="p-5 text-[#68716d]">Weekly meetings with delays</td>
-                            </tr>
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Sinhala &amp; English Voice Engine</td>
-                                <td class="p-5 font-bold text-emerald-700 bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    Native Dual Speech STT &amp; TTS
-                                </td>
-                                <td class="p-5 text-[#68716d]">Limited / Generic</td>
-                                <td class="p-5 text-[#68716d]">Fluent (Human dependent)</td>
-                            </tr>
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Multi-Venture Silos</td>
-                                <td class="p-5 font-bold text-emerald-700 bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    Infinite isolated business profiles
-                                </td>
-                                <td class="p-5 text-red-500">Cluttered single workspace</td>
-                                <td class="p-5 text-[#68716d]">Extra billings per company</td>
-                            </tr>
-                            <tr>
-                                <td class="p-5 font-bold text-[#202725]">Integrated Sprint &amp; Kanban Board</td>
-                                <td class="p-5 font-bold text-emerald-700 bg-[#173d34]/5 border-x border-[#ddd8cc]">
-                                    Built-in auto task conversion
-                                </td>
-                                <td class="p-5 text-red-500">Requires third-party integration</td>
-                                <td class="p-5 text-[#68716d]">Manual project manager needed</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pricing Packages Section -->
-        <section id="pricing" class="py-20 bg-[#f5f2e9] border-y border-[#ddd8cc]">
+        <!-- Deployment Packages & Editions Section -->
+        <section id="editions" class="py-20 bg-[#f5f2e9] border-y border-[#ddd8cc]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-10">
-                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#b7843f] mb-3">Simple &amp; Transparent</h2>
+                    <h2 class="text-xs font-extrabold uppercase tracking-widest text-[#b7843f] mb-3">Deployment Packages</h2>
                     <h3 class="text-3xl sm:text-4xl font-extrabold text-[#173d34] tracking-tight">
                         Own Your Autonomous AI Board Today
                     </h3>
                     <p class="text-sm sm:text-base text-[#68716d] mt-2">
-                        Pay once. No subscription traps. Free updates included.
+                        Select the deployment package tailored for your business workflow. Free updates included.
                     </p>
-
-                    <!-- Currency Switcher Toggle -->
-                    <div class="mt-6 inline-flex items-center gap-3 bg-[#ffffff] p-1.5 rounded-full border border-[#ddd8cc] shadow-sm">
-                        <span class="text-xs font-bold text-[#173d34]">USD ($)</span>
-                        <label class="relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" id="currencyToggle" class="sr-only peer">
-                            <div class="w-11 h-6 bg-[#ddd8cc] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#173d34]"></div>
-                        </label>
-                        <span class="text-xs font-bold text-[#b7843f]">LKR (Rs. ශ්‍රී ලංකා)</span>
-                    </div>
                 </div>
 
-                <!-- 3 Pricing Cards -->
+                <!-- 3 Deployment Cards -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
                     <!-- Tier 1: Starter -->
                     <div class="bg-[#ffffff] rounded-3xl border border-[#ddd8cc] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
@@ -1013,8 +878,7 @@
                                 Perfect for solo developers, students, and freelancers who need an intelligent private companion.
                             </p>
                             <div class="mb-6">
-                                <span id="priceStarter" class="text-4xl font-extrabold text-[#173d34] font-mono">$49</span>
-                                <span id="periodStarter" class="text-xs text-[#68716d] block mt-1">one-time lifetime access</span>
+                                <span class="text-xs font-bold text-[#173d34] bg-[#f5f2e9] px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Solo Deployment</span>
                             </div>
 
                             <ul class="space-y-3 text-xs text-[#202725] mb-8">
@@ -1032,7 +896,7 @@
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
-                                    <span>Sinhala &amp; English Voice STT/TTS</span>
+                                    <span>Conversational Voice AI (STT &amp; TTS)</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
@@ -1045,7 +909,7 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Starter Edition" data-price="$49">
+                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Starter Edition" data-price="Inquire">
                             Get Starter Edition
                         </button>
                     </div>
@@ -1064,8 +928,7 @@
                                 Complete autonomous board for startup founders, digital agency directors, and business operators.
                             </p>
                             <div class="mb-6">
-                                <span id="priceFounder" class="text-4xl font-extrabold text-[#173d34] font-mono">$99</span>
-                                <span id="periodFounder" class="text-xs text-[#68716d] block mt-1">one-time lifetime access</span>
+                                <span class="text-xs font-bold text-[#173d34] bg-[#173d34]/10 px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Complete Autonomous Board</span>
                             </div>
 
                             <ul class="space-y-3 text-xs text-[#202725] mb-8 font-medium">
@@ -1091,7 +954,7 @@
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
-                                    <span>Dual Sinhala + English Voice Engine</span>
+                                    <span>Advanced Conversational Voice Engine</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
@@ -1100,7 +963,7 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn btn-shimmer w-full py-3.5 rounded-full bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] text-xs font-extrabold transition-all shadow-lg active:scale-95" data-plan="Founder Executive Suite" data-price="$99">
+                        <button class="open-order-btn btn-shimmer w-full py-3.5 rounded-full bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] text-xs font-extrabold transition-all shadow-lg active:scale-95" data-plan="Founder Executive Suite" data-price="Inquire">
                             Deploy Founder Suite
                         </button>
                     </div>
@@ -1116,8 +979,7 @@
                                 For agencies and software consultants wanting to deploy RuXt to unlimited client installations.
                             </p>
                             <div class="mb-6">
-                                <span id="priceAgency" class="text-4xl font-extrabold text-[#173d34] font-mono">$199</span>
-                                <span id="periodAgency" class="text-xs text-[#68716d] block mt-1">one-time commercial license</span>
+                                <span class="text-xs font-bold text-[#b7843f] bg-[#b7843f]/10 px-3 py-1.5 rounded-full uppercase tracking-wider inline-block">Commercial Resale Rights</span>
                             </div>
 
                             <ul class="space-y-3 text-xs text-[#202725] mb-8">
@@ -1144,7 +1006,7 @@
                             </ul>
                         </div>
 
-                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Agency & Reseller" data-price="$199">
+                        <button class="open-order-btn w-full py-3 rounded-full border border-[#173d34] text-[#173d34] hover:bg-[#173d34] hover:text-[#fcfaf5] text-xs font-bold transition-all" data-plan="Agency & Reseller" data-price="Inquire">
                             Get Agency Commercial License
                         </button>
                     </div>
@@ -1157,7 +1019,7 @@
                             <i data-lucide="shield-check" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-[#173d34]">14-Day Full Source &amp; Setup Guarantee</div>
+                            <div class="text-xs font-bold text-[#173d34]">Full Setup &amp; Deployment Guarantee</div>
                             <div class="text-[11px] text-[#68716d]">If you encounter any issues getting RuXt running on your machine, our engineers assist you directly.</div>
                         </div>
                     </div>
@@ -1187,7 +1049,7 @@
                             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-[#68716d] transition-transform duration-200"></i>
                         </button>
                         <div class="faq-content text-xs text-[#68716d] leading-relaxed mt-2 pt-2 border-t border-[#f0ede4]">
-                            RuXt's backend is built using lightweight <strong>PHP 8 and SQLite</strong>. The reasoning engine connects directly to Google Gemini Flash &amp; Pro models via your own free or low-cost API key. This means zero GPU hardware is needed—it runs lightning fast on any laptop, Mac, PC with XAMPP, or even a \$5/mo VPS.
+                            RuXt's backend is built using lightweight <strong>PHP 8 and SQLite</strong>. The reasoning engine connects directly to Google Gemini Flash &amp; Pro models via your own free or low-cost API key. This means zero GPU hardware is needed—it runs lightning fast on any laptop, Mac, PC with XAMPP, or even a standard VPS.
                         </div>
                     </div>
 
@@ -1205,11 +1067,11 @@
                     <!-- Q3 -->
                     <div class="faq-item bg-[#ffffff] border border-[#ddd8cc] rounded-2xl p-5 shadow-sm transition-all">
                         <button class="faq-question w-full flex items-center justify-between text-left text-sm font-bold text-[#173d34]">
-                            <span>How does the Sinhala and English voice support work?</span>
+                            <span>How does RuXt's conversational voice intelligence work?</span>
                             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-[#68716d] transition-transform duration-200"></i>
                         </button>
                         <div class="faq-content text-xs text-[#68716d] leading-relaxed mt-2 pt-2 border-t border-[#f0ede4]">
-                            RuXt integrates native dual-channel voice capabilities. You can tap the microphone to dictate queries in colloquial Sinhala, Singlish, or English. Gemini processes the natural intent, and RuXt reads the response back to you with natural speech synthesis.
+                            RuXt integrates native low-latency voice capabilities. Tap the microphone to dictate strategic instructions, queries, and task updates naturally via Speech-to-Text (STT). Gemini processes the intent in real-time, and RuXt speaks responses back using clear, expressive voice synthesis (TTS).
                         </div>
                     </div>
 
@@ -1220,18 +1082,18 @@
                             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-[#68716d] transition-transform duration-200"></i>
                         </button>
                         <div class="faq-content text-xs text-[#68716d] leading-relaxed mt-2 pt-2 border-t border-[#f0ede4]">
-                            Google AI Studio provides a <strong>generous free tier</strong> (up to 15 requests/min completely free). Even if you upgrade to pay-as-you-go, Gemini Flash costs fractions of a cent per million tokens—costing less than \$1-2 per month for active daily business use, compared to \$30-\$60/mo per seat on cloud alternatives.
+                            Google AI Studio provides a <strong>generous free tier</strong> (up to 15 requests/min completely free). Even if you upgrade to pay-as-you-go, Gemini Flash costs fractions of a cent per million tokens, far more efficient than expensive cloud subscription alternatives.
                         </div>
                     </div>
 
                     <!-- Q5 -->
                     <div class="faq-item bg-[#ffffff] border border-[#ddd8cc] rounded-2xl p-5 shadow-sm transition-all">
                         <button class="faq-question w-full flex items-center justify-between text-left text-sm font-bold text-[#173d34]">
-                            <span>How can Sri Lankan or international buyers pay?</span>
+                            <span>How can international buyers deploy or pay?</span>
                             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-[#68716d] transition-transform duration-200"></i>
                         </button>
                         <div class="faq-content text-xs text-[#68716d] leading-relaxed mt-2 pt-2 border-t border-[#f0ede4]">
-                            We support instant international card checkout (Stripe/LemonSqueezy) as well as direct <strong>Sri Lankan Bank Transfer (Commercial Bank, Sampath, HNB)</strong> or direct WhatsApp order. Click "Deploy RuXt" and choose your preferred method.
+                            We support instant online card checkout, electronic bank transfer, and direct deployment assistance via WhatsApp and email. Click "Deploy RuXt" to initiate your onboarding.
                         </div>
                     </div>
                 </div>
@@ -1253,13 +1115,13 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                    <a href="#pricing" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-[#ffd580] hover:bg-[#f5af19] text-[#173d34] font-extrabold text-sm rounded-full shadow-2xl transition-all flex items-center justify-center gap-2">
-                        <span>Deploy RuXt AI Now</span>
+                    <a href="#editions" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-[#ffd580] hover:bg-[#f5af19] text-[#173d34] font-extrabold text-sm rounded-full shadow-2xl transition-all flex items-center justify-center gap-2">
+                        <span>Explore Deployment Editions</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <button class="open-order-btn w-full sm:w-auto px-6 py-4 rounded-full bg-[#285c4e] hover:bg-[#347866] text-[#fcfaf5] text-sm font-bold border border-[#799a87]/40 transition-all flex items-center justify-center gap-2" data-plan="Founder Executive Suite" data-price="$99">
+                    <button class="open-order-btn w-full sm:w-auto px-6 py-4 rounded-full bg-[#285c4e] hover:bg-[#347866] text-[#fcfaf5] text-sm font-bold border border-[#799a87]/40 transition-all flex items-center justify-center gap-2" data-plan="Founder Executive Suite" data-price="Inquire">
                         <i data-lucide="message-square" class="w-4 h-4 text-[#ffd580]"></i>
-                        <span>Order via WhatsApp</span>
+                        <span>Inquire via WhatsApp</span>
                     </button>
                 </div>
             </div>
@@ -1283,7 +1145,7 @@
                         <span class="text-lg font-extrabold text-[#fcfaf5]">RuXt AI</span>
                     </div>
                     <p class="text-xs text-[#a3b8b0] max-w-sm leading-relaxed">
-                        The world's leading self-hosted autonomous AI executive board &amp; Chief of Staff platform. Zero cloud subscriptions, 100% private SQLite data ownership, bilingual voice ready.
+                        The world's leading self-hosted autonomous AI executive board &amp; Chief of Staff platform. Zero cloud subscriptions, 100% private SQLite data ownership, conversational voice intelligence ready.
                     </p>
                 </div>
 
@@ -1294,8 +1156,8 @@
                         <li><a href="#overview" class="hover:text-[#ffd580] transition-colors">Overview</a></li>
                         <li><a href="#boardroom" class="hover:text-[#ffd580] transition-colors">War Room Deliberations</a></li>
                         <li><a href="#features" class="hover:text-[#ffd580] transition-colors">Feature Matrix</a></li>
-                        <li><a href="#calculator" class="hover:text-[#ffd580] transition-colors">ROI Calculator</a></li>
-                        <li><a href="#pricing" class="hover:text-[#ffd580] transition-colors">Lifetime License</a></li>
+                        <li><a href="#editions" class="hover:text-[#ffd580] transition-colors">Deployment Editions</a></li>
+                        <li><a href="#faq" class="hover:text-[#ffd580] transition-colors">FAQ</a></li>
                     </ul>
                 </div>
 
@@ -1331,9 +1193,9 @@
             <!-- Modal Header -->
             <div class="flex items-center justify-between pb-4 border-b border-[#ddd8cc]">
                 <div>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-[#b7843f]">Instant Deployment</span>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-[#b7843f]">Deployment Request</span>
                     <h4 id="orderPlanName" class="text-xl font-bold text-[#173d34]">Founder Executive Suite</h4>
-                    <p id="orderPlanPrice" class="text-xs font-mono font-bold text-emerald-700 mt-0.5">$99 · Lifetime Ownership</p>
+                    <p id="orderPlanPrice" class="text-xs font-semibold text-emerald-700 mt-0.5">Lifetime Private License</p>
                 </div>
                 <button id="closeOrderModalBtn" aria-label="Close Order Modal" class="text-[#68716d] hover:text-[#173d34] p-2 rounded-xl hover:bg-[#f5f2e9] transition-colors">
                     <i data-lucide="x" class="w-5 h-5"></i>
@@ -1344,9 +1206,9 @@
             <div class="mt-5 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between gap-3">
                 <div class="text-xs">
                     <div class="font-bold text-emerald-950 flex items-center gap-1.5">
-                        <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> Fast WhatsApp Checkout
+                        <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> Direct WhatsApp Inquiry
                     </div>
-                    <div class="text-[11px] text-emerald-800 mt-0.5">Instant response &amp; Sri Lankan Bank / Card payment link.</div>
+                    <div class="text-[11px] text-emerald-800 mt-0.5">Instant response &amp; deployment setup guidance.</div>
                 </div>
                 <button id="whatsappOrderBtn" type="button" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-[#ffffff] font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-md flex-shrink-0">
                     <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
@@ -1354,7 +1216,7 @@
             </div>
 
             <div class="my-4 text-center text-[10px] font-bold uppercase text-[#68716d] tracking-widest relative">
-                <span class="bg-[#ffffff] px-3 relative z-10">Or Submit Direct Order Request</span>
+                <span class="bg-[#ffffff] px-3 relative z-10">Or Submit Deployment Request</span>
                 <div class="absolute inset-x-0 top-1/2 border-t border-[#ddd8cc]"></div>
             </div>
 
@@ -1364,17 +1226,17 @@
 
                 <div>
                     <label for="buyerName" class="block text-xs font-bold text-[#173d34] mb-1">Your Full Name *</label>
-                    <input type="text" id="buyerName" required placeholder="e.g. Kasun Perera" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
+                    <input type="text" id="buyerName" required placeholder="e.g. Alex Morgan" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                         <label for="buyerEmail" class="block text-xs font-bold text-[#173d34] mb-1">Email Address *</label>
-                        <input type="email" id="buyerEmail" required placeholder="kasun@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
+                        <input type="email" id="buyerEmail" required placeholder="alex@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
                     </div>
                     <div>
                         <label for="buyerPhone" class="block text-xs font-bold text-[#173d34] mb-1">WhatsApp / Phone</label>
-                        <input type="tel" id="buyerPhone" placeholder="+94 77 123 4567" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
+                        <input type="tel" id="buyerPhone" placeholder="+1 (555) 019-2834" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
                     </div>
                 </div>
 
@@ -1386,7 +1248,7 @@
                 <div id="orderStatusMsg" class="hidden"></div>
 
                 <button type="submit" id="submitOrderBtn" class="w-full py-3 bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5">
-                    <span>Submit Order &amp; Get Bank Details</span>
+                    <span>Submit Deployment Request</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </form>

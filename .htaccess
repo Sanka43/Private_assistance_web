@@ -1,5 +1,5 @@
 # Apache Configuration for RuXt AI Sales Website
-DirectoryIndex index.php index.html
+DirectoryIndex index.html index.php
 
 <IfModule mod_rewrite.c>
     RewriteEngine On

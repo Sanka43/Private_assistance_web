@@ -76,7 +76,7 @@ if ($method === 'POST') {
     echo json_encode([
         'success' => true,
         'order_id' => $orderId,
-        'message' => 'Order inquiry recorded successfully! Our team will reach out via WhatsApp/Email within 15 minutes.'
+        'message' => 'Order inquiry recorded successfully! Our team will reach out via email within 15 minutes.'
     ]);
     exit;
 }

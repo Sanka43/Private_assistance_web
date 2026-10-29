@@ -1001,7 +1001,7 @@
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i>
-                                    <span>Priority 1-on-1 Deployment Assistance via WhatsApp</span>
+                                    <span>Priority 1-on-1 Deployment Assistance &amp; Direct Support</span>
                                 </li>
                             </ul>
                         </div>
@@ -1093,7 +1093,7 @@
                             <i data-lucide="chevron-down" class="faq-icon w-4 h-4 text-[#68716d] transition-transform duration-200"></i>
                         </button>
                         <div class="faq-content text-xs text-[#68716d] leading-relaxed mt-2 pt-2 border-t border-[#f0ede4]">
-                            We support instant online card checkout, electronic bank transfer, and direct deployment assistance via WhatsApp and email. Click "Deploy RuXt" to initiate your onboarding.
+                            We support instant online card checkout, electronic bank transfer, and direct deployment assistance via email. Click "Deploy RuXt" to initiate your onboarding.
                         </div>
                     </div>
                 </div>
@@ -1121,7 +1121,7 @@
                     </a>
                     <button class="open-order-btn w-full sm:w-auto px-6 py-4 rounded-full bg-[#285c4e] hover:bg-[#347866] text-[#fcfaf5] text-sm font-bold border border-[#799a87]/40 transition-all flex items-center justify-center gap-2" data-plan="Founder Executive Suite" data-price="Inquire">
                         <i data-lucide="message-square" class="w-4 h-4 text-[#ffd580]"></i>
-                        <span>Inquire via WhatsApp</span>
+                        <span>Contact Concierge</span>
                     </button>
                 </div>
             </div>
@@ -1202,26 +1202,8 @@
                 </button>
             </div>
 
-            <!-- Instant WhatsApp Fast Order Option -->
-            <div class="mt-5 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between gap-3">
-                <div class="text-xs">
-                    <div class="font-bold text-emerald-950 flex items-center gap-1.5">
-                        <i data-lucide="zap" class="w-4 h-4 text-emerald-600"></i> Direct WhatsApp Inquiry
-                    </div>
-                    <div class="text-[11px] text-emerald-800 mt-0.5">Instant response &amp; deployment setup guidance.</div>
-                </div>
-                <button id="whatsappOrderBtn" type="button" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-[#ffffff] font-bold text-xs rounded-xl flex items-center gap-1.5 shadow-md flex-shrink-0">
-                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
-                </button>
-            </div>
-
-            <div class="my-4 text-center text-[10px] font-bold uppercase text-[#68716d] tracking-widest relative">
-                <span class="bg-[#ffffff] px-3 relative z-10">Or Submit Deployment Request</span>
-                <div class="absolute inset-x-0 top-1/2 border-t border-[#ddd8cc]"></div>
-            </div>
-
             <!-- Order Submission Form -->
-            <form id="orderForm" class="space-y-4">
+            <form id="orderForm" class="mt-5 space-y-4">
                 <input type="hidden" id="selectedPlanInput" name="plan" value="Founder Executive Suite">
 
                 <div>
@@ -1235,7 +1217,7 @@
                         <input type="email" id="buyerEmail" required placeholder="alex@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
                     </div>
                     <div>
-                        <label for="buyerPhone" class="block text-xs font-bold text-[#173d34] mb-1">WhatsApp / Phone</label>
+                        <label for="buyerPhone" class="block text-xs font-bold text-[#173d34] mb-1">Phone Number (Optional)</label>
                         <input type="tel" id="buyerPhone" placeholder="+1 (555) 019-2834" class="w-full px-3.5 py-2.5 rounded-xl border border-[#ddd8cc] text-xs focus:ring-2 focus:ring-[#173d34] focus:outline-none bg-[#fcfaf5]">
                     </div>
                 </div>
@@ -1254,12 +1236,6 @@
             </form>
         </div>
     </div>
-
-    <!-- Floating WhatsApp Action Bubble for Instant Trust & Questions -->
-    <a href="https://wa.me/94770000000?text=Hello!%20I%20have%20a%20question%20about%20RuXt%20AI" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 group border-2 border-white">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
-        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold px-0 group-hover:px-2">Chat with Sales</span>
-    </a>
 
     <!-- Custom Main JavaScript -->
     <script src="assets/js/main.js"></script>

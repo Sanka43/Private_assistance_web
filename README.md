@@ -42,7 +42,7 @@ Private_assistance_web/
 │   ├── css/
 │   │   └── custom.css         # Glassmorphism, animations, and custom styling
 │   ├── js/
-│   │   └── main.js            # Interactive calculators, simulator, modals, WhatsApp integration
+│   │   └── main.js            # Interactive calculators, simulator, modals, and direct inquiries
 │   └── icons/                 # Brand SVG logos and PWA icons
 └── api/
     ├── inquiry.php            # Secure lead capture endpoint (PHP + SQLite)

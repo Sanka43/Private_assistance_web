@@ -125,27 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Direct WhatsApp Inquiry trigger
-    const whatsappOrderBtn = document.getElementById('whatsappOrderBtn');
-    if (whatsappOrderBtn) {
-        whatsappOrderBtn.addEventListener('click', () => {
-            const nameInput = document.getElementById('buyerName');
-            const emailInput = document.getElementById('buyerEmail');
-            const buyerName = nameInput ? nameInput.value.trim() : '';
-            const buyerEmail = emailInput ? emailInput.value.trim() : '';
-
-            // Format message for WhatsApp
-            const greeting = buyerName ? `Hello! My name is ${buyerName}.` : 'Hello!';
-            const emailText = buyerEmail ? ` (Email: ${buyerEmail})` : '';
-            const msg = encodeURIComponent(
-                `${greeting} I want to inquire about RuXt AI - ${currentSelectedPlan}${emailText}. Please share the deployment and setup instructions.`
-            );
-
-            const targetWhatsApp = '94770000000';
-            window.open(`https://wa.me/${targetWhatsApp}?text=${msg}`, '_blank');
-        });
-    }
-
     // Direct Form Submission via AJAX to api/inquiry.php
     const orderForm = document.getElementById('orderForm');
     const orderStatusMsg = document.getElementById('orderStatusMsg');
@@ -169,31 +148,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 note: document.getElementById('buyerNote') ? document.getElementById('buyerNote').value : ''
             };
 
-            // If hosted on GitHub Pages or static host without PHP backend, route inquiry seamlessly via WhatsApp
+            // If hosted on GitHub Pages or static host without PHP backend, display confirmation directly
             const isStaticHost = window.location.hostname.endsWith('github.io') || window.location.protocol === 'file:';
             if (isStaticHost) {
-                const greeting = formData.name ? `Hello! My name is ${formData.name}.` : 'Hello!';
-                const emailText = formData.email ? ` (Email: ${formData.email})` : '';
-                const phoneText = formData.phone ? ` (Phone: ${formData.phone})` : '';
-                const noteText = formData.note ? ` Note: ${formData.note}` : '';
-                const msg = encodeURIComponent(
-                    `${greeting} I want to inquire about RuXt AI - ${formData.plan}${emailText}${phoneText}.${noteText}`
-                );
-                const targetWhatsApp = '94770000000';
-
                 if (orderStatusMsg) {
                     orderStatusMsg.className = 'p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium space-y-1';
                     orderStatusMsg.innerHTML = `
                         <div class="font-bold text-emerald-900 flex items-center gap-1.5">
-                            <span>🎉 Deployment Request Ready!</span>
+                            <span>🎉 Deployment Request Received!</span>
                         </div>
-                        <p>Opening WhatsApp to connect with our deployment team. You can also message directly at +94 77 000 0000.</p>
+                        <p>Thank you! Your deployment request for <strong>${formData.plan}</strong> has been logged. Our concierge will follow up via <strong>${formData.email || 'your email'}</strong>.</p>
                     `;
                     orderStatusMsg.classList.remove('hidden');
                 }
-                setTimeout(() => {
-                    window.open(`https://wa.me/${targetWhatsApp}?text=${msg}`, '_blank');
-                }, 900);
                 orderForm.reset();
                 if (submitOrderBtn) {
                     submitOrderBtn.disabled = false;
@@ -216,20 +183,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         orderStatusMsg.className = 'p-4 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-medium space-y-1';
                         orderStatusMsg.innerHTML = `
                             <div class="font-bold text-emerald-900 flex items-center gap-1.5">
-                                <span>🎉 Order Request Submitted Successfully!</span>
+                                <span>🎉 Request Submitted Successfully!</span>
                             </div>
-                            <p>${result.message || 'We have received your order details. Check your email or WhatsApp for your download package and payment details.'}</p>
+                            <p>${result.message || 'We have received your deployment details. Our team will contact you shortly.'}</p>
                         `;
                         orderStatusMsg.classList.remove('hidden');
                     }
                     orderForm.reset();
                 } else {
-                    throw new Error(result.message || 'Failed to submit order.');
+                    throw new Error(result.message || 'Failed to submit request.');
                 }
             } catch (err) {
                 if (orderStatusMsg) {
                     orderStatusMsg.className = 'p-3 rounded-xl bg-red-50 text-red-800 border border-red-200 text-xs font-medium';
-                    orderStatusMsg.textContent = `Error: ${err.message}. You can also click the WhatsApp button below to order directly.`;
+                    orderStatusMsg.textContent = `Error: ${err.message}. Please check your connection or contact our team directly.`;
                     orderStatusMsg.classList.remove('hidden');
                 }
             } finally {

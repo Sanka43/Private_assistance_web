@@ -37,6 +37,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sanka43.github.io/Private_assistance_web/workspaces.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://sanka43.github.io/Private_assistance_web/assets/icons/og-preview.svg</image:loc>
+      <image:title>RuXt AI - Dedicated Private Multi-Venture Workspaces Marketplace</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://sanka43.github.io/Private_assistance_web/signin.html</loc>
     <lastmod>2026-10-29</lastmod>
     <changefreq>monthly</changefreq>

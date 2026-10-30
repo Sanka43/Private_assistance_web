@@ -709,3 +709,131 @@ input[type="range"]::-webkit-slider-thumb:hover {
     }
 }
 
+/* ========================================================
+   RuXt AI Workspace Marketplace & Sales Engine Styles
+   ======================================================== */
+
+.workspace-filter-btn {
+    padding: 0.5rem 1.15rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #68716d;
+    background: #ffffff;
+    border: 1px solid #ddd8cc;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.workspace-filter-btn:hover {
+    color: #173d34;
+    border-color: #799a87;
+    background: #f5f2e9;
+    transform: translateY(-1px);
+}
+
+.workspace-filter-btn.active {
+    background: #173d34;
+    color: #fcfaf5;
+    border-color: #173d34;
+    box-shadow: 0 4px 12px rgba(23, 61, 52, 0.2);
+}
+
+.workspace-card {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.workspace-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px -10px rgba(23, 61, 52, 0.12);
+}
+
+.workspace-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+}
+
+.workspace-tag--ecom {
+    background: rgba(245, 158, 11, 0.12);
+    color: #b45309;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.workspace-tag--saas {
+    background: rgba(59, 130, 246, 0.12);
+    color: #1d4ed8;
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.workspace-tag--agency {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.workspace-tag--realestate {
+    background: rgba(168, 85, 247, 0.12);
+    color: #7e22ce;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.workspace-tag--media {
+    background: rgba(236, 72, 153, 0.12);
+    color: #be185d;
+    border: 1px solid rgba(236, 72, 153, 0.25);
+}
+
+.workspace-tag--holding {
+    background: rgba(183, 132, 63, 0.15);
+    color: #8c5b1b;
+    border: 1px solid rgba(183, 132, 63, 0.3);
+}
+
+.roi-slider-track {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 6px;
+    background: #e8e3d9;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.roi-slider-track::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #173d34;
+    cursor: pointer;
+    border: 3px solid #fcfaf5;
+    box-shadow: 0 2px 8px rgba(23, 61, 52, 0.35);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.roi-slider-track::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+    background: #285c4e;
+}
+
+.roi-slider-track::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #173d34;
+    cursor: pointer;
+    border: 3px solid #fcfaf5;
+    box-shadow: 0 2px 8px rgba(23, 61, 52, 0.35);
+}
+
+

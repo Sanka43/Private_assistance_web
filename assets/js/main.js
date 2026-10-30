@@ -125,7 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSelectedPrice = price;
 
             if (orderPlanName) orderPlanName.textContent = plan;
-            if (orderPlanPrice) orderPlanPrice.textContent = 'Lifetime Private License';
+            if (orderPlanPrice) {
+                orderPlanPrice.textContent = price !== 'Inquire' ? `${price} · Lifetime Private License` : 'Lifetime Private License';
+            }
             if (selectedPlanInput) selectedPlanInput.value = plan;
 
             if (orderModal) {
@@ -435,5 +437,87 @@ document.addEventListener('DOMContentLoaded', () => {
     // Check if initial URL has #signin hash to auto-open modal
     if (window.location.hash === '#signin') {
         openSignInModal();
+    }
+
+    // ========================================================
+    // 8. Workspaces Marketplace Filtering & Search
+    // ========================================================
+    const workspaceFilterBtns = document.querySelectorAll('.workspace-filter-btn');
+    const workspaceCards = document.querySelectorAll('.workspace-card');
+    const workspaceCountDisplay = document.getElementById('workspaceCountDisplay');
+
+    if (workspaceFilterBtns.length > 0 && workspaceCards.length > 0) {
+        workspaceFilterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter') || 'all';
+
+                workspaceFilterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                let visibleCount = 0;
+                workspaceCards.forEach(card => {
+                    const category = card.getAttribute('data-category') || '';
+                    if (filter === 'all' || category === filter) {
+                        card.classList.remove('hidden');
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.transition = 'opacity 0.25s ease';
+                            card.style.opacity = '1';
+                        }, 20);
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                if (workspaceCountDisplay) {
+                    workspaceCountDisplay.textContent = visibleCount;
+                }
+            });
+        });
+    }
+
+    // ========================================================
+    // 9. Workspaces Interactive ROI & Cost Calculator
+    // ========================================================
+    const workspaceCountSlider = document.getElementById('workspaceCountSlider');
+    const sliderWorkspaceNum = document.getElementById('sliderWorkspaceNum');
+    const monthlySaasCostEl = document.getElementById('monthlySaasCost');
+    const yearlySaasCostEl = document.getElementById('yearlySaasCost');
+    const ruxtLifetimeCostEl = document.getElementById('ruxtLifetimeCost');
+    const threeYearSavingsEl = document.getElementById('threeYearSavings');
+
+    if (workspaceCountSlider) {
+        const calculateRoi = () => {
+            const count = parseInt(workspaceCountSlider.value, 10) || 1;
+            if (sliderWorkspaceNum) sliderWorkspaceNum.textContent = count;
+
+            // Typical SaaS cost per venture workspace (ChatGPT Team $30/mo + Monday/Notion $20/mo + DB tools $30/mo = ~$80/mo per venture)
+            const saasPerWorkspaceMonthly = 79;
+            const monthlySaas = count * saasPerWorkspaceMonthly;
+            const yearlySaas = monthlySaas * 12;
+
+            // RuXt AI pricing model:
+            // 1 workspace = $79
+            // 2-5 workspaces = $129 (Growth 5-pack)
+            // 6+ workspaces = $299 (Enterprise Unlimited)
+            let ruxtCost = 79;
+            if (count > 1 && count <= 5) {
+                ruxtCost = 129;
+            } else if (count > 5) {
+                ruxtCost = 299;
+            }
+
+            const threeYearSaas = yearlySaas * 3;
+            const threeYearSavings = Math.max(0, threeYearSaas - ruxtCost);
+
+            if (monthlySaasCostEl) monthlySaasCostEl.textContent = `$${monthlySaas.toLocaleString()}/mo`;
+            if (yearlySaasCostEl) yearlySaasCostEl.textContent = `$${yearlySaas.toLocaleString()}/yr`;
+            if (ruxtLifetimeCostEl) ruxtLifetimeCostEl.textContent = `$${ruxtCost} (Lifetime)`;
+            if (threeYearSavingsEl) threeYearSavingsEl.textContent = `$${threeYearSavings.toLocaleString()}`;
+        };
+
+        workspaceCountSlider.addEventListener('input', calculateRoi);
+        calculateRoi();
     }
 });

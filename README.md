@@ -31,6 +31,8 @@
 Private_assistance_web/
 ├── index.html                 # Main static landing page (GitHub Pages ready)
 ├── index.php                  # Local XAMPP/Apache production entry point
+├── workspaces.html            # Multi-venture AI workspaces sales & marketplace (GitHub Pages)
+├── workspaces.php             # Multi-venture AI workspaces sales & marketplace (Local PHP)
 ├── signin.html                # Standalone workspace orientation & sign-in gateway
 ├── signin.php                 # PHP workspace orientation & sign-in gateway
 ├── .htaccess                  # Apache server security headers & routing

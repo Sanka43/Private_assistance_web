@@ -227,26 +227,39 @@
                     <span>Workspaces</span>
                     <span class="text-[9px] bg-[#b7843f]/15 text-[#b7843f] border border-[#b7843f]/30 px-1.5 py-0.2 rounded-full font-extrabold uppercase">NEW</span>
                 </a>
+                <a href="download.php" class="hover:text-[#173d34] transition-colors flex items-center gap-1.5 font-semibold text-[#173d34]">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-[#b7843f]"></i>
+                    <span>Downloads</span>
+                    <span class="text-[9px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-1.5 py-0.2 rounded-full font-extrabold uppercase">EXE</span>
+                </a>
                 <a href="#editions" class="hover:text-[#173d34] transition-colors">Editions</a>
                 <a href="#faq" class="hover:text-[#173d34] transition-colors">FAQ</a>
             </nav>
 
             <!-- Right CTA Actions -->
-            <div class="hidden sm:flex items-center space-x-4">
-                <a href="#boardroom" class="text-xs font-bold text-[#173d34] hover:text-[#285c4e] px-3 py-2 rounded-xl border border-[#ddd8cc] hover:bg-[#f5f2e9] transition-all flex items-center gap-1.5">
-                    <i data-lucide="play-circle" class="w-4 h-4 text-[#b7843f]"></i>
-                    <span>Live Simulator</span>
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="hq.php" class="px-3.5 py-2 rounded-xl bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] text-xs font-bold border border-[#b7843f]/40 shadow-sm transition-all flex items-center gap-1.5 active:scale-95" title="Open Autonomous Digital Company HQ">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-[#ffd580]"></i>
+                    <span>Digital HQ</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-pulse"></span>
                 </a>
-                <a href="#" id="navSignInBtn" class="sign-in-btn btn-shimmer text-xs font-bold bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] px-5 py-2.5 rounded-full shadow-lg shadow-[#173d34]/20 transition-all flex items-center gap-1.5 active:scale-95" title="Sign In to RuXt AI Workspace">
-                    <i data-lucide="log-in" class="w-4 h-4"></i>
+                <a href="#" id="navSignInBtn" class="sign-in-btn btn-shimmer text-xs font-bold bg-[#f5f2e9] hover:bg-[#ede8dc] text-[#173d34] border border-[#ddd8cc] px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 active:scale-95" title="Sign In to RuXt AI Workspace">
+                    <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
                     <span>Sign In</span>
                 </a>
             </div>
 
-            <!-- Mobile Hamburger Button -->
-            <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="lg:hidden text-[#173d34] p-2 rounded-xl hover:bg-[#ede8dc] transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+            <!-- Mobile Controls -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <a href="hq.php" class="px-3 py-1.5 rounded-xl bg-[#173d34] text-[#ffd580] text-xs font-bold border border-[#b7843f]/40 flex items-center gap-1 shadow-sm active:scale-95" title="Digital HQ">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-[#ffd580]"></i>
+                    <span>HQ</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-pulse"></span>
+                </a>
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="text-[#173d34] p-2 rounded-xl hover:bg-[#ede8dc] transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Drawer Menu -->
@@ -263,6 +276,14 @@
                     </div>
 
                     <nav class="mt-6 flex flex-col space-y-4 text-base font-bold text-[#202725]">
+                        <a href="hq.php" class="mobile-nav-link text-[#173d34] flex items-center justify-between p-2 rounded-xl bg-[#173d34]/10">
+                            <span class="flex items-center gap-2"><i data-lucide="building-2" class="w-4 h-4"></i> Enter Digital HQ</span>
+                            <span class="text-[9px] bg-emerald-600 text-white px-2 py-0.5 rounded-full uppercase">Live</span>
+                        </a>
+                        <a href="download.php" class="mobile-nav-link text-[#173d34] flex items-center justify-between p-2 rounded-xl hover:bg-[#173d34]/5">
+                            <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-[#b7843f]"></i> Download .EXE Files</span>
+                            <span class="text-[9px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded-full font-extrabold uppercase">EXE</span>
+                        </a>
                         <a href="#overview" class="mobile-nav-link hover:text-[#173d34]">Overview</a>
                         <a href="#boardroom" class="mobile-nav-link hover:text-[#173d34]">War Room Demo</a>
                         <a href="#features" class="mobile-nav-link hover:text-[#173d34]">Features</a>
@@ -300,26 +321,31 @@
 
                 <!-- Main Punchy Headline -->
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#173d34] tracking-tight max-w-5xl mx-auto leading-[1.1] mb-6">
-                    Your AI Agents, Working Together. <br class="hidden sm:inline">
+                    Run Your Own Digitalized Company. <br class="hidden sm:inline">
                     <span class="bg-gradient-to-r from-[#173d34] via-[#285c4e] to-[#b7843f] bg-clip-text text-transparent">
-                        On Your Own Private Hardware.
+                        With Dedicated AI Team Members.
                     </span>
                 </h1>
 
                 <!-- Subtitle / Value Hook -->
                 <p class="text-lg sm:text-xl text-[#68716d] max-w-3xl mx-auto font-normal leading-relaxed mb-10">
-                    Replace chaotic monthly agency bills and fragmented SaaS tools. Deploy an autonomous team of AI specialists—<strong>Chief of Staff, CMO, CTO, CFO</strong>—deliberating strategy, executing tasks, and remembering everything in your private SQLite database.
+                    Replace chaotic monthly payroll and fragmented SaaS tools. Command an autonomous organization of specialized AI department heads—<strong>Chief of Staff, CTO, CMO, CFO, COO</strong>—deliberating strategy, executing tasks, and storing corporate IP in your private SQLite vault.
                 </p>
 
                 <!-- CTA Action Buttons -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-12">
-                    <a href="#editions" class="btn-shimmer w-full sm:w-auto px-8 py-4 bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] font-bold text-sm rounded-full shadow-xl shadow-[#173d34]/25 transition-all flex items-center justify-center gap-2 active:scale-95">
-                        <span>Explore Editions</span>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto mb-12">
+                    <a href="hq.php" class="btn-shimmer w-full sm:w-auto px-6 py-3.5 bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] font-bold text-sm rounded-full shadow-xl shadow-[#173d34]/25 transition-all flex items-center justify-center gap-2 active:scale-95">
+                        <i data-lucide="building-2" class="w-4 h-4 text-[#ffd580]"></i>
+                        <span>Launch Digital HQ (Live)</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
-                    <a href="#boardroom" class="w-full sm:w-auto px-8 py-4 bg-[#ffffff] hover:bg-[#f5f2e9] text-[#173d34] font-bold text-sm rounded-full border border-[#ddd8cc] transition-all flex items-center justify-center gap-2 shadow-sm">
+                    <a href="download.php" class="w-full sm:w-auto px-6 py-3.5 bg-[#f5f2e9] hover:bg-[#ede8dc] text-[#173d34] font-bold text-sm rounded-full border border-[#173d34]/20 transition-all flex items-center justify-center gap-2 shadow-sm">
+                        <i data-lucide="download" class="w-4 h-4 text-[#b7843f]"></i>
+                        <span>Download .EXE</span>
+                    </a>
+                    <a href="#boardroom" class="w-full sm:w-auto px-6 py-3.5 bg-[#ffffff] hover:bg-[#f5f2e9] text-[#173d34] font-bold text-sm rounded-full border border-[#ddd8cc] transition-all flex items-center justify-center gap-2 shadow-sm">
                         <i data-lucide="play" class="w-4 h-4 text-[#b7843f]"></i>
-                        <span>Watch Boardroom Demo</span>
+                        <span>Watch Demo</span>
                     </a>
                 </div>
 
@@ -749,6 +775,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Digital HQ Launch Callout Banner -->
+                <div class="mt-10 max-w-4xl mx-auto p-6 rounded-3xl bg-gradient-to-r from-[#173d34] via-[#102d26] to-[#0f2620] text-[#fcfaf5] border border-[#285c4e] shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5">
+                    <div class="space-y-1 text-center sm:text-left">
+                        <div class="flex items-center justify-center sm:justify-start gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#b7843f] text-[#fcfaf5] uppercase tracking-wider">Full Operational Experience</span>
+                            <span class="text-xs text-[#a7f3d0] font-mono">6 AI Team Members Active</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-[#fcfaf5]">Want the full interactive Digital Company Command Center?</h4>
+                        <p class="text-xs text-[#d1ded9]">Convene custom boardroom deliberations, browse the interactive Org Chart, and dispatch tasks to your autonomous AI employees.</p>
+                    </div>
+                    <a href="hq.php" class="px-6 py-3 rounded-2xl bg-[#ffd580] hover:bg-[#ffe299] text-[#173d34] text-xs font-black shadow-lg transition-all flex items-center gap-2 whitespace-nowrap active:scale-95">
+                        <i data-lucide="building-2" class="w-4 h-4"></i>
+                        <span>Enter Digital HQ</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -1162,6 +1205,7 @@
                     <h5 class="text-xs font-bold uppercase tracking-wider text-[#fcfaf5]">Navigation</h5>
                     <ul class="space-y-2 text-xs">
                         <li><a href="#overview" class="hover:text-[#ffd580] transition-colors">Overview</a></li>
+                        <li><a href="download.php" class="hover:text-[#ffd580] text-[#ffd580] font-semibold transition-colors flex items-center gap-1.5"><i data-lucide="download" class="w-3.5 h-3.5 text-[#ffd580]"></i> Download .EXE</a></li>
                         <li><a href="#boardroom" class="hover:text-[#ffd580] transition-colors">War Room Deliberations</a></li>
                         <li><a href="#features" class="hover:text-[#ffd580] transition-colors">Feature Matrix</a></li>
                         <li><a href="#editions" class="hover:text-[#ffd580] transition-colors">Deployment Editions</a></li>

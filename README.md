@@ -17,11 +17,13 @@
 
 ## ⚡ Highlights
 
-- **Executive War Room**: 4 AI specialists (Chief of Staff, CMO, CTO, CFO) that coordinate and deliberate together.
-- **100% Private & Local-First**: SQLite database stored on your hardware. Zero third-party telemetry.
-- **Conversational Voice AI**: Low-latency voice command recognition (STT) and natural audio playback (TTS).
-- **Single-File Portable Architecture**: Clean HTML5/Tailwind/ES6 frontend + lightweight PHP/SQLite lead collection.
-- **Interactive Live Simulator**: Multi-agent war room demo, Chief of Staff consultation, and Kanban pipeline.
+- **Autonomous Digital Company HQ**: Standalone interactive headquarters (`hq.html` / `hq.php`) to command your own company with dedicated AI team members.
+- **Executive War Room**: 6 AI specialists (Chief of Staff, CTO, CMO, CFO, COO, Legal Counsel) that coordinate, debate, and deliberate together in real time.
+- **Interactive Org Chart**: Founder & CEO command hierarchy with real-time cognitive metrics and 1-on-1 private consultation channels.
+- **Autonomous Sprint Kanban**: Task pipeline where boardroom resolutions automatically convert into actionable deliverables awaiting founder sign-off.
+- **100% Private & Local-First**: Encrypted SQLite database stored on your hardware. Zero third-party telemetry, zero cloud lock-in.
+- **Conversational Voice AI**: Sub-second speech recognition (STT) and natural audio executive speech synthesis (TTS).
+- **Single-File Portable Architecture**: Clean HTML5/Tailwind/ES6 frontend + lightweight PHP/SQLite backend.
 
 ---
 
@@ -29,12 +31,21 @@
 
 ```text
 Private_assistance_web/
-├── index.html                 # Main static landing page (GitHub Pages ready)
+├── download.html              # Windows native binaries (.exe) download portal (GitHub Pages)
+├── download.php               # Windows native binaries (.exe) download portal (Local PHP/XAMPP)
+├── hq.html                    # Autonomous Digital Company Headquarters (GitHub Pages)
+├── hq.php                     # Autonomous Digital Company Headquarters (Local PHP/XAMPP)
+├── index.html                 # Main static enterprise landing page (GitHub Pages ready)
 ├── index.php                  # Local XAMPP/Apache production entry point
-├── workspaces.html            # Multi-venture AI workspaces sales & marketplace (GitHub Pages)
-├── workspaces.php             # Multi-venture AI workspaces sales & marketplace (Local PHP)
+├── workspaces.html            # Multi-venture AI workspaces marketplace (GitHub Pages)
+├── workspaces.php             # Multi-venture AI workspaces marketplace (Local PHP)
 ├── signin.html                # Standalone workspace orientation & sign-in gateway
 ├── signin.php                 # PHP workspace orientation & sign-in gateway
+├── downloads/                 # Native Windows standalone executables & archives
+│   ├── RuXt-Desktop.exe       # Native GUI & System Tray Companion (48 KB)
+│   ├── ruxt-agent.exe         # Headless CLI background agent (45 KB)
+│   ├── RuXt-Windows-Suite.zip # Complete suite package with README (43 KB)
+│   └── README.txt             # Binary quickstart instructions
 ├── .htaccess                  # Apache server security headers & routing
 ├── robots.txt                 # SEO crawler rules
 ├── sitemap.xml                # SEO sitemap index
@@ -44,12 +55,14 @@ Private_assistance_web/
 │       └── deploy.yml         # Automated GitHub Pages CI/CD workflow
 ├── assets/
 │   ├── css/
-│   │   └── custom.css         # Glassmorphism, animations, and custom styling
+│   │   └── custom.css         # Glassmorphism, org chart lines, speech bubbles & animations
 │   ├── js/
+│   │   ├── hq.js              # Multi-agent deliberation engine, org chart, kanban & company state
 │   │   └── main.js            # Interactive calculators, simulator, modals, and direct inquiries
 │   ├── icons/                 # Brand SVG logos and PWA icons
 │   └── video/                 # Introduction & onboarding video assets (intro.mp4)
 └── api/
+    ├── company.php            # Digital company state & sprint tasks SQLite persistence
     ├── inquiry.php            # Secure lead capture endpoint (PHP + SQLite)
     └── data/                  # SQLite storage directory (.gitkeep)
 ```

@@ -168,6 +168,11 @@ header('X-Content-Type-Options: nosniff');
                     <span>Workspaces</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-[#b7843f]"></span>
                 </a>
+                <a href="download.php" class="hover:text-[#173d34] transition-colors flex items-center gap-1.5 font-semibold text-[#173d34]">
+                    <i data-lucide="download" class="w-3.5 h-3.5 text-[#b7843f]"></i>
+                    <span>Downloads</span>
+                    <span class="text-[9px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-1.5 py-0.2 rounded-full font-extrabold uppercase">EXE</span>
+                </a>
                 <a href="#packs" class="hover:text-[#173d34] transition-colors">Capacity Packs</a>
                 <a href="#roi-calculator" class="hover:text-[#173d34] transition-colors">ROI Calculator</a>
                 <a href="#architecture" class="hover:text-[#173d34] transition-colors">Isolation Architecture</a>
@@ -175,21 +180,29 @@ header('X-Content-Type-Options: nosniff');
             </nav>
 
             <!-- Right CTA Actions -->
-            <div class="hidden sm:flex items-center space-x-4">
-                <a href="#marketplace" class="text-xs font-bold text-[#173d34] hover:text-[#285c4e] px-3.5 py-2 rounded-xl border border-[#ddd8cc] hover:bg-[#f5f2e9] transition-all flex items-center gap-1.5">
-                    <i data-lucide="layers" class="w-4 h-4 text-[#b7843f]"></i>
-                    <span>Browse Workspaces</span>
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="hq.php" class="px-3.5 py-2 rounded-xl bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] text-xs font-bold border border-[#b7843f]/40 shadow-sm transition-all flex items-center gap-1.5 active:scale-95" title="Open Autonomous Digital Company HQ">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-[#ffd580]"></i>
+                    <span>Digital HQ</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-pulse"></span>
                 </a>
-                <a href="signin.php" class="sign-in-btn btn-shimmer text-xs font-bold bg-[#173d34] hover:bg-[#285c4e] text-[#fcfaf5] px-5 py-2.5 rounded-full shadow-lg shadow-[#173d34]/20 transition-all flex items-center gap-1.5 active:scale-95" title="Sign In to RuXt AI Workspace">
-                    <i data-lucide="log-in" class="w-4 h-4"></i>
+                <a href="signin.php" class="sign-in-btn btn-shimmer text-xs font-bold bg-[#f5f2e9] hover:bg-[#ede8dc] text-[#173d34] border border-[#ddd8cc] px-4 py-2 rounded-xl transition-all flex items-center gap-1.5 active:scale-95" title="Sign In to RuXt AI Workspace">
+                    <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
                     <span>Sign In</span>
                 </a>
             </div>
 
-            <!-- Mobile Hamburger Button -->
-            <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="lg:hidden text-[#173d34] p-2 rounded-xl hover:bg-[#ede8dc] transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+            <!-- Mobile Controls -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <a href="hq.php" class="px-3 py-1.5 rounded-xl bg-[#173d34] text-[#ffd580] text-xs font-bold border border-[#b7843f]/40 flex items-center gap-1 shadow-sm active:scale-95" title="Digital HQ">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-[#ffd580]"></i>
+                    <span>HQ</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 live-pulse"></span>
+                </a>
+                <button id="mobileMenuBtn" aria-label="Open Navigation Menu" class="text-[#173d34] p-2 rounded-xl hover:bg-[#ede8dc] transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Drawer Menu -->
@@ -207,6 +220,10 @@ header('X-Content-Type-Options: nosniff');
 
                     <nav class="mt-6 flex flex-col space-y-4 text-base font-bold text-[#202725]">
                         <a href="index.php" class="mobile-nav-link hover:text-[#173d34]">Home</a>
+                        <a href="download.php" class="mobile-nav-link text-[#173d34] flex items-center justify-between p-2 rounded-xl bg-[#173d34]/5">
+                            <span class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-[#b7843f]"></i> Download .EXE Files</span>
+                            <span class="text-[9px] bg-emerald-100 text-emerald-800 border border-emerald-300 px-2 py-0.5 rounded-full font-extrabold uppercase">EXE</span>
+                        </a>
                         <a href="#marketplace" class="mobile-nav-link text-[#173d34]">Workspaces Marketplace</a>
                         <a href="#packs" class="mobile-nav-link hover:text-[#173d34]">Capacity License Packs</a>
                         <a href="#roi-calculator" class="mobile-nav-link hover:text-[#173d34]">ROI &amp; Cost Calculator</a>
@@ -1058,6 +1075,7 @@ header('X-Content-Type-Options: nosniff');
 
                 <div class="flex items-center space-x-6 text-xs text-[#799a87]">
                     <a href="index.php" class="hover:text-[#fcfaf5] transition-colors">Home</a>
+                    <a href="download.php" class="hover:text-[#ffd580] text-[#ffd580] transition-colors font-semibold flex items-center gap-1"><i data-lucide="download" class="w-3.5 h-3.5 text-[#ffd580]"></i> Download .EXE</a>
                     <a href="index.php#boardroom" class="hover:text-[#fcfaf5] transition-colors">War Room Simulator</a>
                     <a href="#marketplace" class="hover:text-[#fcfaf5] transition-colors">Workspaces</a>
                     <a href="signin.php" class="hover:text-[#fcfaf5] transition-colors">Sign In</a>

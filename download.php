@@ -4,18 +4,51 @@
  * Standalone .EXE & .ZIP Releases
  */
 
+// Handle dynamic 1-click PowerShell installer stream
+if (isset($_GET['action']) && ($_GET['action'] === 'install' || $_GET['action'] === 'install_script' || $_GET['action'] === 'ps1')) {
+    $ps1File = __DIR__ . '/downloads/install.ps1';
+    if (file_exists($ps1File)) {
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+        $baseDir = preg_replace('#/download\.php.*$#i', '', $scriptName);
+        $serverUrl = rtrim($protocol . '://' . $host . $baseDir, '/');
+        
+        $content = file_get_contents($ps1File);
+        $content = str_replace('{{SERVER_URL}}', $serverUrl, $content);
+        $content = str_replace('$exeUrl = "$BaseServerUrl/api/devices.php?action=download_desktop"', '$exeUrl = "$BaseServerUrl/downloads/RuXt-Desktop.exe"', $content);
+        $content = str_replace('$icoUrl = "$BaseServerUrl/bridge/ruxt.ico"', '$icoUrl = "$BaseServerUrl/downloads/ruxt.ico"', $content);
+        $content = str_replace('$cerUrl = "$BaseServerUrl/bridge/RuXt-Certificate.cer"', '$cerUrl = "$BaseServerUrl/downloads/RuXt-Certificate.cer"', $content);
+
+        header('Content-Type: text/plain; charset=utf-8');
+        header('Cache-Control: no-cache, no-store, must-revalidate');
+        echo $content;
+        exit;
+    }
+}
+
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
+$baseDir = preg_replace('#/download\.php.*$#i', '', $scriptName);
+$portalUrl = rtrim($protocol . '://' . $host . $baseDir, '/');
+$installOneLiner = "irm {$portalUrl}/download.php?action=install | iex";
+
 $downloadsDir = __DIR__ . '/downloads';
 $desktopFile = $downloadsDir . '/RuXt-Desktop.exe';
 $agentFile = $downloadsDir . '/ruxt-agent.exe';
-$suiteFile = $downloadsDir . '/RuXt-Windows-Suite.zip';
+$suiteFile = $downloadsDir . '/RuXt-Setup.zip';
+if (!file_exists($suiteFile)) {
+    $suiteFile = $downloadsDir . '/RuXt-Windows-Suite.zip';
+}
 
-$desktopSize = file_exists($desktopFile) ? round(filesize($desktopFile) / 1024, 1) . ' KB' : '48 KB';
+$desktopSize = file_exists($desktopFile) ? round(filesize($desktopFile) / 1024, 1) . ' KB' : '564 KB';
 $agentSize = file_exists($agentFile) ? round(filesize($agentFile) / 1024, 1) . ' KB' : '45 KB';
-$suiteSize = file_exists($suiteFile) ? round(filesize($suiteFile) / 1024, 1) . ' KB' : '43 KB';
+$suiteSize = file_exists($suiteFile) ? round(filesize($suiteFile) / 1024, 1) . ' KB' : '644 KB';
 
-$desktopSha256 = file_exists($desktopFile) ? strtoupper(hash_file('sha256', $desktopFile)) : '4FB989943BB3BEDE9A90A4E1FAC24AAFB95D54E69959888186BEAB8CD818E900';
-$agentSha256 = file_exists($agentFile) ? strtoupper(hash_file('sha256', $agentFile)) : 'B569A1FD178E9D808C2A0C2FC42FE98CB764ED5D50416F8A356E1B2420AA04E9';
-$suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFile)) : '2702B4E11CB570AD5F993CB71D03AB6DE0F004026B2A59D14C78557337AD89D1';
+$desktopSha256 = file_exists($desktopFile) ? strtoupper(hash_file('sha256', $desktopFile)) : '';
+$agentSha256 = file_exists($agentFile) ? strtoupper(hash_file('sha256', $agentFile)) : '';
+$suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFile)) : '';
 ?>
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -236,8 +269,8 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
         </div>
         <div class="flex-1 text-xs">
             <h6 class="font-bold text-sm text-[#ffd580] mb-0.5" id="toastFileName">Download Started</h6>
-            <p class="text-[#d0ded8] leading-relaxed">
-                Save the executable anywhere on your PC. No installer or admin setup required. Double click to start.
+            <p id="toastHelpText" class="text-[#d0ded8] leading-relaxed">
+                If Microsoft Edge shows <em>"isn't commonly downloaded"</em>, click <strong>... &rarr; Keep &rarr; Show more &rarr; Keep anyway</strong>.
             </p>
         </div>
         <button onclick="dismissToast()" class="text-[#a3b8b0] hover:text-white p-1 rounded-lg">
@@ -263,20 +296,46 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
             </h1>
 
             <p class="mt-4 text-base sm:text-lg text-[#68716d] max-w-2xl mx-auto leading-relaxed">
-                Standalone, ultra-lightweight (<span class="font-bold text-[#173d34]">&lt; 50 KB</span>) native C# executables for Windows 10 and 11. Zero installers, zero background bloat, and 100% private SQLite memory control.
+                Standalone, high-speed native Windows desktop client with embedded 0ms UI, custom 3D robot branding, and automated cloud synchronization.
             </p>
 
+            <!-- Method A 1-Click Install Command Box -->
+            <div class="mt-8 max-w-2xl mx-auto bg-white border-2 border-[#173d34] rounded-2xl p-4 sm:p-5 shadow-xl shadow-[#173d34]/10 text-left space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-7 h-7 rounded-lg bg-[#173d34] text-[#ffd580] flex items-center justify-center font-bold text-xs shadow-xs">⚡</span>
+                        <div>
+                            <h3 class="text-xs sm:text-sm font-bold text-[#173d34]">Method A: 1-Click PowerShell Install</h3>
+                            <p class="text-[11px] text-[#68716d]">Recommended for any foreign laptop &middot; Zero SmartScreen Warnings</p>
+                        </div>
+                    </div>
+                    <span class="text-[9px] bg-emerald-100 text-emerald-800 font-mono font-bold px-2 py-0.5 rounded-full uppercase">100% BYPASS</span>
+                </div>
+
+                <div class="flex items-center gap-2 bg-[#202725] text-[#fcfaf5] p-2.5 sm:p-3 rounded-xl font-mono text-xs select-all overflow-x-auto shadow-inner">
+                    <code id="cmdText" class="truncate flex-1 text-emerald-300"><?= htmlspecialchars($installOneLiner) ?></code>
+                    <button type="button" onclick="copyInstallCmd()" id="copyBtn" class="px-3 py-1.5 bg-[#173d34] hover:bg-[#285c4e] text-white rounded-lg text-xs font-bold flex items-center space-x-1.5 cursor-pointer flex-shrink-0 transition-all shadow-sm">
+                        <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                        <span id="copyLabel">Copy Command</span>
+                    </button>
+                </div>
+
+                <p class="text-[11px] text-[#68716d]">
+                    Open <strong>PowerShell</strong> on any laptop and paste this. It downloads directly without browser Mark-of-the-Web, installs the official 3D robot icon, creates desktop shortcuts, and launches instantly.
+                </p>
+            </div>
+
             <!-- Quick Direct Download CTA Button Group -->
-            <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
                 <a href="downloads/RuXt-Desktop.exe" download="RuXt-Desktop.exe" onclick="handleDownload('RuXt-Desktop.exe')" class="px-6 py-3.5 rounded-2xl bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] font-bold text-sm shadow-xl shadow-[#173d34]/20 border border-[#b7843f]/40 transition-all flex items-center gap-2.5 active:scale-95 group">
                     <i data-lucide="download" class="w-5 h-5 text-[#ffd580] group-hover:translate-y-0.5 transition-transform"></i>
                     <span>Download RuXt-Desktop.exe</span>
                     <span class="text-[10px] bg-[#ffd580]/20 text-[#ffd580] px-2 py-0.5 rounded-full font-mono"><?= htmlspecialchars($desktopSize) ?></span>
                 </a>
 
-                <a href="downloads/RuXt-Windows-Suite.zip" download="RuXt-Windows-Suite.zip" onclick="handleDownload('RuXt-Windows-Suite.zip')" class="px-6 py-3.5 rounded-2xl bg-[#ffffff] hover:bg-[#f5f2e9] text-[#173d34] font-bold text-sm shadow-md border border-[#ddd8cc] transition-all flex items-center gap-2 active:scale-95">
+                <a href="downloads/RuXt-Setup.zip" download="RuXt-Setup.zip" onclick="handleDownload('RuXt-Setup.zip')" class="px-6 py-3.5 rounded-2xl bg-[#ffffff] hover:bg-[#f5f2e9] text-[#173d34] font-bold text-sm shadow-md border border-[#ddd8cc] transition-all flex items-center gap-2 active:scale-95">
                     <i data-lucide="folder-archive" class="w-5 h-5 text-[#b7843f]"></i>
-                    <span>Download Full Suite (.ZIP)</span>
+                    <span>Download Setup Package (.ZIP)</span>
                     <span class="text-[10px] bg-[#173d34]/10 text-[#173d34] px-2 py-0.5 rounded-full font-mono"><?= htmlspecialchars($suiteSize) ?></span>
                 </a>
             </div>
@@ -311,13 +370,17 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
                 </div>
 
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-[#173d34] text-[#ffd580] flex items-center justify-center mb-5 shadow-md shadow-[#173d34]/20">
-                        <i data-lucide="monitor" class="w-6 h-6"></i>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/icons/ruxt_robot.jpg" alt="RuXt AI Robot Icon" class="w-14 h-14 rounded-2xl object-cover shadow-md border border-[#ddd8cc]">
+                        <div>
+                            <span class="text-[10px] font-mono font-bold text-[#b7843f] uppercase block">OFFICIAL ICON</span>
+                            <span class="text-xs font-bold text-[#173d34]">3D Robot Character</span>
+                        </div>
                     </div>
 
                     <div class="flex items-baseline gap-2 mb-1">
                         <h3 class="text-xl font-extrabold text-[#173d34]">RuXt Desktop</h3>
-                        <span class="text-xs font-mono font-bold text-[#b7843f]">v2.4</span>
+                        <span class="text-xs font-mono font-bold text-[#b7843f]">v2.2</span>
                     </div>
                     <p class="text-xs font-mono text-[#68716d] mb-4">RuXt-Desktop.exe · <?= htmlspecialchars($desktopSize) ?></p>
 
@@ -348,9 +411,15 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
 
                 <div>
                     <!-- Direct Download Button -->
-                    <a href="downloads/RuXt-Desktop.exe" download="RuXt-Desktop.exe" onclick="handleDownload('RuXt-Desktop.exe')" class="w-full py-3 bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2 active:scale-95 mb-3">
+                    <a href="downloads/RuXt-Desktop.exe" download="RuXt-Desktop.exe" onclick="handleDownload('RuXt-Desktop.exe')" class="w-full py-3 bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] font-bold text-xs rounded-xl transition-all shadow-md flex items-center justify-center gap-2 active:scale-95 mb-2">
                         <i data-lucide="download" class="w-4 h-4"></i>
                         <span>Download RuXt-Desktop.exe</span>
+                    </a>
+
+                    <!-- 1-Click ZIP Setup Button -->
+                    <a href="downloads/RuXt-Setup.zip" download="RuXt-Setup.zip" onclick="handleDownload('RuXt-Setup.zip')" class="w-full py-2.5 bg-white hover:bg-[#ede8dc] border border-[#ddd8cc] text-[#173d34] font-bold text-xs rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 active:scale-95 mb-3" title="Includes 1-click unblocker and desktop shortcuts">
+                        <i data-lucide="folder-archive" class="w-4 h-4 text-[#b7843f]"></i>
+                        <span>Download 1-Click Setup (.ZIP)</span>
                     </a>
 
                     <!-- Checksum Toggle -->
@@ -540,17 +609,57 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
                 </div>
             </div>
 
-            <!-- Windows SmartScreen Security Note Card -->
-            <div class="mt-10 bg-[#ffffff] rounded-3xl border border-[#b7843f]/40 p-6 sm:p-7 shadow-md flex flex-col sm:flex-row items-start sm:items-center gap-5">
-                <div class="w-12 h-12 rounded-2xl bg-[#ffd580]/20 text-[#b7843f] flex items-center justify-center flex-shrink-0">
-                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            <!-- Windows & Browser Security Helper Card -->
+            <div class="mt-10 bg-[#ffffff] rounded-3xl border-2 border-[#b7843f]/50 p-6 sm:p-7 shadow-lg space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-2xl bg-[#ffd580]/30 text-[#b7843f] flex items-center justify-center flex-shrink-0 font-bold">
+                        <i data-lucide="shield-alert" class="w-5 h-5 text-[#b7843f]"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-base font-extrabold text-[#173d34]">First-Time Download &amp; Launch Guide</h4>
+                        <p class="text-xs text-[#68716d]">Why Microsoft Edge or Windows shows warnings on private in-house builds and how to proceed</p>
+                    </div>
                 </div>
-                <div class="flex-1 text-xs text-[#68716d]">
-                    <h4 class="text-sm font-extrabold text-[#173d34] mb-1">First-Time Launch Notice (Windows SmartScreen)</h4>
-                    <p class="leading-relaxed">
-                        Because RuXt is an in-house private build compiled directly for self-hosted deployment rather than a bloated commercial app signed with expensive Microsoft third-party certificates, Windows SmartScreen may show a blue prompt: <span class="font-semibold text-[#173d34]">"Windows protected your PC"</span>.
-                        Simply click <span class="font-bold text-[#173d34]">"More info"</span> and then <span class="font-bold text-[#173d34]">"Run anyway"</span>. The executable contains zero telemetry or spyware and runs 100% locally on your machine.
-                    </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <!-- Edge Notice -->
+                    <div class="bg-[#fcfaf5] border border-[#ddd8cc] p-4 rounded-2xl text-xs space-y-2">
+                        <div class="flex items-center gap-2 font-bold text-[#173d34]">
+                            <span class="w-5 h-5 rounded-md bg-[#173d34] text-white flex items-center justify-center text-[10px]">1</span>
+                            <span>Microsoft Edge: "isn't commonly downloaded"</span>
+                        </div>
+                        <p class="text-[#68716d] leading-relaxed">
+                            Because this is a freshly compiled private build (not distributed through commercial app stores), Edge flags it for confirmation.
+                        </p>
+                        <div class="bg-[#ffffff] border border-[#ddd8cc] p-2.5 rounded-xl font-mono text-[11px] text-[#202725]">
+                            Hover notification &rarr; Click <strong>...</strong> (Three dots) &rarr; Click <strong>Keep</strong> &rarr; Click <strong>Show more</strong> &rarr; Click <strong>Keep anyway</strong>
+                        </div>
+                    </div>
+
+                    <!-- SmartScreen Notice -->
+                    <div class="bg-[#fcfaf5] border border-[#ddd8cc] p-4 rounded-2xl text-xs space-y-2">
+                        <div class="flex items-center gap-2 font-bold text-[#173d34]">
+                            <span class="w-5 h-5 rounded-md bg-[#173d34] text-white flex items-center justify-center text-[10px]">2</span>
+                            <span>Windows: "Windows protected your PC"</span>
+                        </div>
+                        <p class="text-[#68716d] leading-relaxed">
+                            When double-clicking an EXE downloaded from a browser, Windows SmartScreen checks its cloud telemetry.
+                        </p>
+                        <div class="bg-[#ffffff] border border-[#ddd8cc] p-2.5 rounded-xl font-mono text-[11px] text-[#202725]">
+                            Click <strong>"More info"</strong> &rarr; Click <strong>"Run anyway"</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 100% Bypass Alternative -->
+                <div class="bg-[#173d34]/5 border border-[#173d34]/20 p-3.5 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                    <div class="flex items-center gap-2 text-[#173d34]">
+                        <i data-lucide="zap" class="w-4 h-4 text-[#b7843f] flex-shrink-0"></i>
+                        <span><strong>Want 0 warnings?</strong> Download the <a href="downloads/RuXt-Setup.zip" class="font-bold underline text-[#173d34] hover:text-[#285c4e]">RuXt-Setup.zip</a> or use the <strong>Method A PowerShell Command</strong> above.</span>
+                    </div>
+                    <a href="#hero-section" class="px-3 py-1.5 bg-[#173d34] hover:bg-[#285c4e] text-[#ffd580] font-bold rounded-xl text-[11px] whitespace-nowrap shadow-xs">
+                        View Method A
+                    </a>
                 </div>
             </div>
         </div>
@@ -760,6 +869,18 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
             });
         }
 
+        // Copy 1-Click PowerShell Install Command
+        function copyInstallCmd() {
+            const code = document.getElementById('cmdText').innerText.trim();
+            const btnLabel = document.getElementById('copyLabel');
+            navigator.clipboard.writeText(code).then(() => {
+                btnLabel.textContent = 'Copied!';
+                setTimeout(() => { btnLabel.textContent = 'Copy Command'; }, 2000);
+            }).catch(() => {
+                prompt("Copy this PowerShell command:", code);
+            });
+        }
+
         // Copy SHA256 Hash
         function copyHash(hash, btn) {
             navigator.clipboard.writeText(hash).then(() => {
@@ -780,16 +901,22 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
         function handleDownload(filename) {
             const toast = document.getElementById('downloadToast');
             const toastFileName = document.getElementById('toastFileName');
+            const toastHelp = document.getElementById('toastHelpText');
             if (!toast) return;
 
             toastFileName.textContent = `Downloading ${filename}`;
+            if (filename.endsWith('.zip')) {
+                toastHelp.innerHTML = `Extract the ZIP and run <strong class="text-white">RuXt-Setup.bat</strong> to configure 3D icon shortcuts and bypass SmartScreen.`;
+            } else {
+                toastHelp.innerHTML = `If Microsoft Edge shows <em>"isn't commonly downloaded"</em>, click <strong class="text-[#ffd580]">... &rarr; Keep &rarr; Show more &rarr; Keep anyway</strong>.`;
+            }
             toast.classList.remove('translate-y-32', 'opacity-0');
             toast.classList.add('translate-y-0', 'opacity-100');
 
             clearTimeout(toastTimeout);
             toastTimeout = setTimeout(() => {
                 dismissToast();
-            }, 7000);
+            }, 8000);
         }
 
         function dismissToast() {

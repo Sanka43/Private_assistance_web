@@ -5,6 +5,11 @@ DirectoryIndex index.html index.php
     RewriteEngine On
     # Prevent directory listing
     Options -Indexes
+
+    # Fast 1-Click Installer and Download Vanity Routes
+    RewriteRule ^get/?$ download.php?action=install [L,QSA]
+    RewriteRule ^setup/?$ downloads/RuXt-Setup.zip [L,QSA]
+    RewriteRule ^desktop/?$ downloads/RuXt-Desktop.exe [L,QSA]
 </IfModule>
 
 # Protect data folder

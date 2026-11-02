@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.singleton.1.6.0.schema.json
+PackageIdentifier: RuXt.AI.Desktop
+PackageVersion: 2.2.0.0
+PackageName: RuXt AI Desktop
+Publisher: RuXt AI Technologies
+PublisherUrl: https://web.ruxt.org/
+License: MIT
+LicenseUrl: https://web.ruxt.org/
+ShortDescription: Private AI Executive Companion & Autonomous Co-Pilot for Windows
+Description: Standalone native Windows desktop client for RuXt AI. Features zero-latency instant launch, embedded modern UI, autonomous PC computer-use, and automated cloud synchronization.
+PackageUrl: https://web.ruxt.org/
+Moniker: ruxt
+Tags:
+  - ai
+  - assistant
+  - executive
+  - automation
+  - copilot
+  - desktop
+ReleaseNotesUrl: https://web.ruxt.org/download.php
+Installers:
+  - Architecture: x64
+    InstallerType: portable
+    InstallerUrl: https://web.ruxt.org/downloads/RuXt-Desktop.exe
+    InstallerSha256: 194566347F942C0835FE137DFA0D21CD7D54A4E20666BD38AC1B97147D0FD0C0
+    Commands:
+      - RuXt-Desktop
+ManifestType: singleton
+ManifestVersion: 1.6.0

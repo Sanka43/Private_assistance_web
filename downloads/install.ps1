@@ -29,12 +29,12 @@ $CerPath = Join-Path $InstallDir "RuXt-Certificate.cer"
 try {
     # 1. Download RuXt-Desktop.exe directly into %LOCALAPPDATA%
     Write-Host "[1/5] Downloading RuXt AI Desktop Executable..." -ForegroundColor Yellow
-    $exeUrl = "$BaseServerUrl/api/devices.php?action=download_desktop"
+    $exeUrl = "$BaseServerUrl/downloads/RuXt-Desktop.exe"
     Invoke-WebRequest -Uri $exeUrl -OutFile $ExePath -UseBasicParsing
 
     # 2. Download Official Robot Icon
     Write-Host "[2/5] Downloading High-Resolution 3D Robot Icon..." -ForegroundColor Yellow
-    $icoUrl = "$BaseServerUrl/bridge/ruxt.ico"
+    $icoUrl = "$BaseServerUrl/downloads/ruxt.ico"
     try {
         Invoke-WebRequest -Uri $icoUrl -OutFile $IcoPath -UseBasicParsing
     } catch {
@@ -45,7 +45,7 @@ try {
 
     # 3. Download and register Certificate
     Write-Host "[3/5] Registering Application Security & Trust..." -ForegroundColor Yellow
-    $cerUrl = "$BaseServerUrl/bridge/RuXt-Certificate.cer"
+    $cerUrl = "$BaseServerUrl/downloads/RuXt-Certificate.cer"
     try {
         Invoke-WebRequest -Uri $cerUrl -OutFile $CerPath -UseBasicParsing -ErrorAction SilentlyContinue
         if (Test-Path $CerPath) {

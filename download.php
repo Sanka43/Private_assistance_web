@@ -32,7 +32,8 @@ $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 $scriptName = $_SERVER['SCRIPT_NAME'] ?? '';
 $baseDir = preg_replace('#/download\.php.*$#i', '', $scriptName);
 $portalUrl = rtrim($protocol . '://' . $host . $baseDir, '/');
-$installOneLiner = "irm {$portalUrl}/download.php?action=install | iex";
+$installOneLiner = "irm {$portalUrl}/get | iex";
+$wingetCmd = "winget install RuXt.AI.Desktop";
 
 $downloadsDir = __DIR__ . '/downloads';
 $desktopFile = $downloadsDir . '/RuXt-Desktop.exe';
@@ -305,8 +306,8 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
                     <div class="flex items-center space-x-2">
                         <span class="w-7 h-7 rounded-lg bg-[#173d34] text-[#ffd580] flex items-center justify-center font-bold text-xs shadow-xs">⚡</span>
                         <div>
-                            <h3 class="text-xs sm:text-sm font-bold text-[#173d34]">Method A: 1-Click PowerShell Install</h3>
-                            <p class="text-[11px] text-[#68716d]">Recommended for any foreign laptop &middot; Zero SmartScreen Warnings</p>
+                            <h3 class="text-xs sm:text-sm font-bold text-[#173d34]">Method A: 1-Click Fast Setup (Zero SmartScreen Warnings)</h3>
+                            <p class="text-[11px] text-[#68716d]">Recommended for any Windows PC &middot; Automatically trusts cert &amp; creates robot desktop icon</p>
                         </div>
                     </div>
                     <span class="text-[9px] bg-emerald-100 text-emerald-800 font-mono font-bold px-2 py-0.5 rounded-full uppercase">100% BYPASS</span>
@@ -323,6 +324,18 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
                 <p class="text-[11px] text-[#68716d]">
                     Open <strong>PowerShell</strong> on any laptop and paste this. It downloads directly without browser Mark-of-the-Web, installs the official 3D robot icon, creates desktop shortcuts, and launches instantly.
                 </p>
+
+                <!-- Method Winget Alternative Row -->
+                <div class="pt-2 border-t border-[#ddd8cc]/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                    <div class="flex items-center gap-1.5 text-[#68716d]">
+                        <span class="font-mono font-bold text-[#173d34]">or via Winget:</span>
+                        <code class="bg-[#f5f2e9] px-2 py-0.5 rounded font-mono text-[#173d34] text-[11px] select-all" id="wingetText"><?= htmlspecialchars($wingetCmd) ?></code>
+                    </div>
+                    <button type="button" onclick="copyWingetCmd()" id="copyWingetBtn" class="text-xs font-bold text-[#173d34] hover:text-[#285c4e] flex items-center gap-1 cursor-pointer">
+                        <i data-lucide="copy" class="w-3 h-3"></i>
+                        <span id="copyWingetLabel">Copy</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Quick Direct Download CTA Button Group -->
@@ -789,6 +802,88 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
         </div>
     </section>
 
+    <!-- Pre-Emptive SmartScreen Walkthrough Guided Modal -->
+    <div id="smartscreenModal" class="fixed inset-0 z-50 bg-[#202725]/75 backdrop-blur-sm hidden items-center justify-center p-4 transition-all opacity-0">
+        <div class="bg-white border-2 border-[#173d34] w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in fade-in zoom-in-95 duration-200">
+            <!-- Modal Header -->
+            <div class="p-4 sm:p-5 bg-gradient-to-r from-[#173d34] to-[#285c4e] text-white flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-emerald-400 font-bold">
+                        <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm sm:text-base font-extrabold tracking-tight">Your Download Has Started!</h3>
+                        <p class="text-[11px] text-emerald-100 font-mono">1-Minute Windows Setup Guide</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeSmartScreenGuide()" class="text-white/80 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors cursor-pointer">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-5 sm:p-6 space-y-4 overflow-y-auto">
+                <div class="text-xs text-[#68716d] leading-relaxed">
+                    Because RuXt is an independent, non-commercial build, Windows Defender SmartScreen may display a prompt on the very first launch:
+                </div>
+
+                <!-- Windows Defender SmartScreen Mockup Graphic -->
+                <div class="rounded-2xl border-2 border-red-500/40 bg-[#7c1d1d] text-white p-4 sm:p-5 shadow-lg space-y-3 relative overflow-hidden">
+                    <div class="flex items-center justify-between">
+                        <span class="text-base sm:text-lg font-bold tracking-tight">Windows protected your PC</span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-400 animate-ping"></span>
+                    </div>
+
+                    <p class="text-xs text-red-100/90 leading-relaxed">
+                        Microsoft Defender SmartScreen prevented an unrecognised app from starting. Running this app might put your PC at risk.
+                    </p>
+
+                    <!-- Interactive Guide Annotations -->
+                    <div class="pt-2 border-t border-red-400/30 space-y-2.5 text-xs font-bold">
+                        <div class="flex items-center space-x-2.5 bg-black/35 p-2.5 rounded-xl border border-amber-400/50">
+                            <span class="w-6 h-6 rounded-full bg-amber-400 text-black flex items-center justify-center text-xs font-black">1</span>
+                            <span>Click <span class="underline decoration-amber-400 text-amber-300 font-extrabold">More info</span> on the dialog</span>
+                        </div>
+                        <div class="flex items-center space-x-2.5 bg-black/35 p-2.5 rounded-xl border border-emerald-400/50">
+                            <span class="w-6 h-6 rounded-full bg-emerald-400 text-black flex items-center justify-center text-xs font-black">2</span>
+                            <span>Click <span class="bg-emerald-600 px-2.5 py-0.5 rounded text-white font-extrabold">Run anyway</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reassurance / Explanatory Note -->
+                <div class="p-3 bg-[#fcfaf5] border border-[#ddd8cc] rounded-xl flex items-start space-x-2.5 text-xs text-[#202725]">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700 flex-shrink-0 mt-0.5"></i>
+                    <p class="text-[11px] text-[#68716d] leading-relaxed">
+                        <strong>Why does Windows do this?</strong> Microsoft checks cloud reputation for every newly compiled <code>.exe</code>. RuXt is 100% private, self-hosted, does not track telemetry, and never requires administrator rights.
+                    </p>
+                </div>
+
+                <!-- 1-Click Zero Warning Alternative -->
+                <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl space-y-1.5 text-xs">
+                    <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+                        <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-700"></i>
+                        <span>Want to skip SmartScreen entirely?</span>
+                    </span>
+                    <p class="text-[11px] text-emerald-800">
+                        Run our 1-click PowerShell installer to bypass Mark-of-the-Web and configure desktop icons automatically:
+                    </p>
+                    <div class="flex items-center gap-1.5 bg-[#202725] text-emerald-300 p-2 rounded-lg font-mono text-[11px] select-all">
+                        <code id="modalCmdText" class="truncate flex-1"><?= htmlspecialchars($installOneLiner) ?></code>
+                        <button type="button" onclick="copyModalInstallCmd()" id="modalCopyBtn" class="px-2.5 py-1 bg-[#173d34] hover:bg-[#285c4e] text-white rounded text-[10px] font-bold cursor-pointer">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 bg-[#f5f2e9] border-t border-[#ddd8cc] flex items-center justify-end">
+                <button type="button" onclick="closeSmartScreenGuide()" class="px-5 py-2.5 rounded-xl bg-[#173d34] hover:bg-[#285c4e] text-white font-bold text-xs shadow-xs transition-all cursor-pointer">
+                    Got it, I'm ready! &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-[#0f2620] text-[#a3b8b0] py-14 border-t border-[#285c4e]/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -896,27 +991,31 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
             });
         }
 
-        // Handle Download Toast
+        // Handle Download Toast & Guided SmartScreen Walkthrough Modal
         let toastTimeout;
         function handleDownload(filename) {
+            // 1. Show pre-emptive SmartScreen walkthrough modal
+            showSmartScreenGuide(filename);
+
+            // 2. Show floating toast notification
             const toast = document.getElementById('downloadToast');
             const toastFileName = document.getElementById('toastFileName');
             const toastHelp = document.getElementById('toastHelpText');
-            if (!toast) return;
+            if (toast) {
+                toastFileName.textContent = `Downloading ${filename}`;
+                if (filename.endsWith('.zip')) {
+                    toastHelp.innerHTML = `Extract the ZIP and run <strong class="text-white">RuXt-Setup.bat</strong> to configure 3D icon shortcuts and bypass SmartScreen.`;
+                } else {
+                    toastHelp.innerHTML = `If Windows Defender shows <em>"Windows protected your PC"</em>, click <strong class="text-[#ffd580]">More info &rarr; Run anyway</strong>.`;
+                }
+                toast.classList.remove('translate-y-32', 'opacity-0');
+                toast.classList.add('translate-y-0', 'opacity-100');
 
-            toastFileName.textContent = `Downloading ${filename}`;
-            if (filename.endsWith('.zip')) {
-                toastHelp.innerHTML = `Extract the ZIP and run <strong class="text-white">RuXt-Setup.bat</strong> to configure 3D icon shortcuts and bypass SmartScreen.`;
-            } else {
-                toastHelp.innerHTML = `If Microsoft Edge shows <em>"isn't commonly downloaded"</em>, click <strong class="text-[#ffd580]">... &rarr; Keep &rarr; Show more &rarr; Keep anyway</strong>.`;
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    dismissToast();
+                }, 8000);
             }
-            toast.classList.remove('translate-y-32', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                dismissToast();
-            }, 8000);
         }
 
         function dismissToast() {
@@ -926,6 +1025,58 @@ $suiteSha256 = file_exists($suiteFile) ? strtoupper(hash_file('sha256', $suiteFi
                 toast.classList.add('translate-y-32', 'opacity-0');
             }
         }
+
+        function copyWingetCmd() {
+            const code = document.getElementById('wingetText').innerText.trim();
+            const btnLabel = document.getElementById('copyWingetLabel');
+            navigator.clipboard.writeText(code).then(() => {
+                btnLabel.textContent = 'Copied!';
+                setTimeout(() => { btnLabel.textContent = 'Copy'; }, 2000);
+            }).catch(() => {
+                prompt("Copy this Winget command:", code);
+            });
+        }
+
+        function copyModalInstallCmd() {
+            const code = document.getElementById('modalCmdText').innerText.trim();
+            const btn = document.getElementById('modalCopyBtn');
+            navigator.clipboard.writeText(code).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
+
+        function showSmartScreenGuide(filename) {
+            const modal = document.getElementById('smartscreenModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.classList.add('opacity-100');
+                }, 10);
+            }
+        }
+
+        function closeSmartScreenGuide() {
+            const modal = document.getElementById('smartscreenModal');
+            if (modal) {
+                modal.classList.remove('opacity-100');
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.remove('flex');
+                    modal.classList.add('hidden');
+                }, 200);
+            }
+        }
+
+        // Close on ESC key or clicking backdrop
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSmartScreenGuide();
+        });
+        document.getElementById('smartscreenModal')?.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('smartscreenModal')) closeSmartScreenGuide();
+        });
     </script>
 </body>
 </html>
